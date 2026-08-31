@@ -18,7 +18,7 @@ venv/
 data/processed/
 
 # Model artifacts
-models/
+/models/
 *.pkl
 *.joblib
 

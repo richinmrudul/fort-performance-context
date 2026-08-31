@@ -1,0 +1,91 @@
+{
+  "track": "Track A",
+  "row_order_policy": "source_row_order_only_no_random_splits",
+  "dataset_summary": {
+    "feature_rows_with_valid_handgrip": 142,
+    "primary_modeling_rows": 84,
+    "primary_athletes": 15,
+    "excluded_valid_handgrip_rows": 58,
+    "minimum_prior_valid_handgrips": 3
+  },
+  "feature_manifest": {
+    "model_input_columns": [
+      "prior_valid_handgrip_count",
+      "prior_expanding_handgrip_mean",
+      "prior_expanding_handgrip_median",
+      "prior_expanding_handgrip_std"
+    ],
+    "target_columns": [
+      "handgrip_kg",
+      "target_pct_prior_median_baseline"
+    ],
+    "provenance_columns": [
+      "observation_id",
+      "athlete_id",
+      "raw_daily_row_index",
+      "athlete_row_index",
+      "weekday",
+      "duplicate_state",
+      "exclude_from_modeling_default"
+    ],
+    "leakage_labels": {
+      "prior_valid_handgrip_count": "prior_only_source_row_order_assumed_temporal",
+      "prior_expanding_handgrip_mean": "prior_only_source_row_order_assumed_temporal",
+      "prior_expanding_handgrip_median": "prior_only_source_row_order_assumed_temporal",
+      "prior_expanding_handgrip_std": "prior_only_source_row_order_assumed_temporal",
+      "retrospective_descriptive_baselines": "prohibited_as_model_inputs",
+      "same_row_recovery_lifestyle_activity": "prohibited_until_pre_outcome_timing_is_verified"
+    }
+  },
+  "evaluation": {
+    "leave_one_athlete_out": {
+      "feasible": true,
+      "reason": "feasible",
+      "athlete_count": 15
+    },
+    "chronological_holdout": {
+      "assumption": "source row order is treated as temporary temporal order",
+      "split": "last 30 percent of eligible rows per athlete, minimum one row",
+      "random_split_used": false
+    },
+    "ridge_regression": {
+      "model_name": "ridge_prior_only_numeric",
+      "evaluated": false,
+      "reason": "sklearn is not installed in this environment"
+    }
+  },
+  "metrics": {
+    "chronological_holdout": {
+      "prior_expanding_mean": {
+        "sample_count": 33,
+        "athlete_count": 15,
+        "mae_kg": 1.4555125934671387,
+        "rmse_kg": 1.9728026401451937,
+        "mae_pct_prior_median_baseline": 4.326773134845844
+      },
+      "prior_expanding_median": {
+        "sample_count": 33,
+        "athlete_count": 15,
+        "mae_kg": 1.6242424242424243,
+        "rmse_kg": 2.233898616836276,
+        "mae_pct_prior_median_baseline": 4.774081170369397
+      }
+    },
+    "leave_one_athlete_out": {
+      "prior_expanding_mean": {
+        "sample_count": 84,
+        "athlete_count": 15,
+        "mae_kg": 1.6253681371538509,
+        "rmse_kg": 2.365245404276941,
+        "mae_pct_prior_median_baseline": 4.744986960688853
+      },
+      "prior_expanding_median": {
+        "sample_count": 84,
+        "athlete_count": 15,
+        "mae_kg": 1.702380952380953,
+        "rmse_kg": 2.4833493128281026,
+        "mae_pct_prior_median_baseline": 4.963312322882096
+      }
+    }
+  }
+}
