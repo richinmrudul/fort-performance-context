@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Generated data
+data/processed/
+
+# Model artifacts
+models/
+*.pkl
+*.joblib
+
+# Environment variables
+.env
+.env.*
+
+# Node
+node_modules/
+frontend/dist/
+frontend/.next/
+
+# Raw datasets
+data/raw/*
+!data/raw/.gitkeep
