@@ -1,0 +1,624 @@
+{
+  "dataset": "track_b_features",
+  "row_count": 84,
+  "column_count": 80,
+  "feature_count": 68,
+  "track_a_prior_only_feature_count": 4,
+  "track_b_added_feature_count": 64,
+  "timing_policy": "Track B exploratory features are timing-unverified except prior-only history.",
+  "actigraphy_join_assumption": "weekday_only_unverified",
+  "features": [
+    {
+      "feature_name": "prior_valid_handgrip_count",
+      "source_group": "prior_history",
+      "timing_status": "prior_only_prospective_assumption",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "int64",
+      "notes": "Track A model-safe prior-only field; relies on source row order as temporal."
+    },
+    {
+      "feature_name": "prior_expanding_handgrip_mean",
+      "source_group": "prior_history",
+      "timing_status": "prior_only_prospective_assumption",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Track A model-safe prior-only field; relies on source row order as temporal."
+    },
+    {
+      "feature_name": "prior_expanding_handgrip_median",
+      "source_group": "prior_history",
+      "timing_status": "prior_only_prospective_assumption",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Track A model-safe prior-only field; relies on source row order as temporal."
+    },
+    {
+      "feature_name": "prior_expanding_handgrip_std",
+      "source_group": "prior_history",
+      "timing_status": "prior_only_prospective_assumption",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Track A model-safe prior-only field; relies on source row order as temporal."
+    },
+    {
+      "feature_name": "objective_total_sleep_time",
+      "source_group": "daily_sleep_objective",
+      "timing_status": "timing_unverified",
+      "missing_count": 7,
+      "missing_percent": 8.33,
+      "dtype": "float64",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "objective_sleep_intervals",
+      "source_group": "daily_sleep_objective",
+      "timing_status": "timing_unverified",
+      "missing_count": 7,
+      "missing_percent": 8.33,
+      "dtype": "float64",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "objective_longest_interval_duration",
+      "source_group": "daily_sleep_objective",
+      "timing_status": "timing_unverified",
+      "missing_count": 7,
+      "missing_percent": 8.33,
+      "dtype": "float64",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "objective_sleep_period_mean",
+      "source_group": "daily_sleep_objective",
+      "timing_status": "timing_unverified",
+      "missing_count": 7,
+      "missing_percent": 8.33,
+      "dtype": "float64",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "objective_sleep_period_standard_deviation",
+      "source_group": "daily_sleep_objective",
+      "timing_status": "timing_unverified",
+      "missing_count": 7,
+      "missing_percent": 8.33,
+      "dtype": "float64",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "objective_sleep_period_msd",
+      "source_group": "daily_sleep_objective",
+      "timing_status": "timing_unverified",
+      "missing_count": 7,
+      "missing_percent": 8.33,
+      "dtype": "float64",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "sleep_onset_minutes_after_midnight",
+      "source_group": "sleep_timing",
+      "timing_status": "timing_unverified",
+      "missing_count": 7,
+      "missing_percent": 8.33,
+      "dtype": "float64",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "sleep_offset_minutes_after_midnight",
+      "source_group": "sleep_timing",
+      "timing_status": "timing_unverified",
+      "missing_count": 7,
+      "missing_percent": 8.33,
+      "dtype": "float64",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "longest_interval_start_minutes_after_midnight",
+      "source_group": "sleep_timing",
+      "timing_status": "timing_unverified",
+      "missing_count": 7,
+      "missing_percent": 8.33,
+      "dtype": "float64",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "longest_interval_end_minutes_after_midnight",
+      "source_group": "sleep_timing",
+      "timing_status": "timing_unverified",
+      "missing_count": 7,
+      "missing_percent": 8.33,
+      "dtype": "float64",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "caffeine_mg",
+      "source_group": "caffeine",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "caffeine_time_category",
+      "source_group": "caffeine",
+      "timing_status": "timing_unverified",
+      "missing_count": 36,
+      "missing_percent": 42.86,
+      "dtype": "string",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "coffee_count",
+      "source_group": "caffeine",
+      "timing_status": "timing_unverified",
+      "missing_count": 57,
+      "missing_percent": 67.86,
+      "dtype": "Int64",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "cola_count",
+      "source_group": "caffeine",
+      "timing_status": "timing_unverified",
+      "missing_count": 77,
+      "missing_percent": 91.67,
+      "dtype": "Float64",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "tea_count",
+      "source_group": "caffeine",
+      "timing_status": "timing_unverified",
+      "missing_count": 81,
+      "missing_percent": 96.43,
+      "dtype": "Float64",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "espresso_count",
+      "source_group": "caffeine",
+      "timing_status": "timing_unverified",
+      "missing_count": 68,
+      "missing_percent": 80.95,
+      "dtype": "Float64",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "caffeine_present",
+      "source_group": "caffeine",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "boolean",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "sleepquality",
+      "source_group": "wellness",
+      "timing_status": "timing_unverified",
+      "missing_count": 21,
+      "missing_percent": 25.0,
+      "dtype": "float64",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "sleepdura_sr",
+      "source_group": "wellness",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "readiness",
+      "source_group": "wellness",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "fatigue",
+      "source_group": "wellness",
+      "timing_status": "timing_unverified",
+      "missing_count": 1,
+      "missing_percent": 1.19,
+      "dtype": "float64",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "soreness",
+      "source_group": "wellness",
+      "timing_status": "timing_unverified",
+      "missing_count": 1,
+      "missing_percent": 1.19,
+      "dtype": "float64",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "soreness_location_1",
+      "source_group": "wellness",
+      "timing_status": "timing_unverified",
+      "missing_count": 16,
+      "missing_percent": 19.05,
+      "dtype": "float64",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "soreness_location_2",
+      "source_group": "wellness",
+      "timing_status": "timing_unverified",
+      "missing_count": 46,
+      "missing_percent": 54.76,
+      "dtype": "float64",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "matchday_category",
+      "source_group": "match_context",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "object",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "matchday_present",
+      "source_group": "match_context",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "bool",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "matchday_is_match_day",
+      "source_group": "match_context",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "bool",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "matchday_relative_days",
+      "source_group": "match_context",
+      "timing_status": "timing_unverified",
+      "missing_count": 12,
+      "missing_percent": 14.29,
+      "dtype": "object",
+      "notes": "Same-row daily-response signal; collection timing relative to handgrip is unverified."
+    },
+    {
+      "feature_name": "actigraphy_vm_mean",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_vm_median",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_vm_std",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_vm_max",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_vm_sum",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_x_mean",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_y_mean",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_z_mean",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_all_algorithm_nonwear_invalid_fraction",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_row_count",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "int64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_window_epoch_count",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "int64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_expected_epoch_count",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "int64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_partial_window_flag",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "bool",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_source_sequence_valid",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "bool",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_source_sequence_status",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "object",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_source_sequence_unexpected_transitions",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "int64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_source_sequence_missing_samples",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "int64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_join_assumption",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "object",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_weekday_window_id",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "object",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_shared_provisional_window",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "bool",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_shared_provisional_window_row_count",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "Int64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_CK_sleep_fraction",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_CK_wake_fraction",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_CK_nonwear_fraction",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_Oakley_sleep_fraction",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_Oakley_wake_fraction",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_Oakley_nonwear_fraction",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_Sadeh_sleep_fraction",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_Sadeh_wake_fraction",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_Sadeh_nonwear_fraction",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_fourier_HMM_sleep_fraction",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_fourier_HMM_wake_fraction",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_fourier_HMM_nonwear_fraction",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_LSTM_sleep_fraction",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_LSTM_wake_fraction",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    },
+    {
+      "feature_name": "actigraphy_LSTM_nonwear_fraction",
+      "source_group": "actigraphy_weekday_window",
+      "timing_status": "timing_unverified",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64",
+      "notes": "Provisional athlete + weekday aggregation only; not a verified athlete-day window."
+    }
+  ]
+}
