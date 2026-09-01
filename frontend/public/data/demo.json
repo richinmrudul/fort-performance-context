@@ -1,0 +1,438 @@
+{
+  "athlete_index": [
+    {
+      "athlete_key": "athlete-01",
+      "eligible_session_count": 5,
+      "label": "Athlete 01"
+    },
+    {
+      "athlete_key": "athlete-02",
+      "eligible_session_count": 7,
+      "label": "Athlete 02"
+    },
+    {
+      "athlete_key": "athlete-03",
+      "eligible_session_count": 1,
+      "label": "Athlete 03"
+    },
+    {
+      "athlete_key": "athlete-04",
+      "eligible_session_count": 8,
+      "label": "Athlete 04"
+    },
+    {
+      "athlete_key": "athlete-05",
+      "eligible_session_count": 4,
+      "label": "Athlete 05"
+    },
+    {
+      "athlete_key": "athlete-06",
+      "eligible_session_count": 9,
+      "label": "Athlete 06"
+    },
+    {
+      "athlete_key": "athlete-07",
+      "eligible_session_count": 6,
+      "label": "Athlete 07"
+    },
+    {
+      "athlete_key": "athlete-08",
+      "eligible_session_count": 6,
+      "label": "Athlete 08"
+    },
+    {
+      "athlete_key": "athlete-09",
+      "eligible_session_count": 7,
+      "label": "Athlete 09"
+    },
+    {
+      "athlete_key": "athlete-10",
+      "eligible_session_count": 7,
+      "label": "Athlete 10"
+    },
+    {
+      "athlete_key": "athlete-11",
+      "eligible_session_count": 6,
+      "label": "Athlete 11"
+    },
+    {
+      "athlete_key": "athlete-12",
+      "eligible_session_count": 6,
+      "label": "Athlete 12"
+    },
+    {
+      "athlete_key": "athlete-13",
+      "eligible_session_count": 3,
+      "label": "Athlete 13"
+    },
+    {
+      "athlete_key": "athlete-14",
+      "eligible_session_count": 1,
+      "label": "Athlete 14"
+    },
+    {
+      "athlete_key": "athlete-15",
+      "eligible_session_count": 8,
+      "label": "Athlete 15"
+    }
+  ],
+  "context": {
+    "headline": "Context recorded for this study observation",
+    "items": [
+      {
+        "available": true,
+        "display_state": "shown_descriptively",
+        "group": "objective_sleep",
+        "interpretation": "Shown for reference, not used in the trusted prediction",
+        "key": "objective_sleep",
+        "label": "Objective sleep",
+        "source_column": "objective_total_sleep_time",
+        "timing_label": "Timing not verified",
+        "timing_status": "date_only_ambiguous",
+        "unit": "min",
+        "value": 490
+      },
+      {
+        "available": true,
+        "display_state": "shown_descriptively",
+        "group": "caffeine",
+        "interpretation": "Shown for reference, not used in the trusted prediction",
+        "key": "caffeine",
+        "label": "Caffeine",
+        "source_column": "caffeine_mg",
+        "timing_label": "Timing not verified",
+        "timing_status": "ordering_unverified",
+        "unit": "mg",
+        "value": 125
+      },
+      {
+        "available": true,
+        "display_state": "shown_descriptively",
+        "group": "caffeine",
+        "interpretation": "Shown for reference, not used in the trusted prediction",
+        "key": "caffeine_timing",
+        "label": "Caffeine timing",
+        "source_column": "caffeine_time_category",
+        "timing_label": "Timing not verified",
+        "timing_status": "ordering_unverified",
+        "unit": null,
+        "value": "Morning"
+      },
+      {
+        "available": true,
+        "display_state": "shown_descriptively",
+        "group": "subjective_wellness",
+        "interpretation": "Shown for reference, not used in the trusted prediction",
+        "key": "readiness_survey",
+        "label": "Readiness survey item",
+        "source_column": "readiness",
+        "timing_label": "Timing not verified",
+        "timing_status": "date_only_ambiguous",
+        "unit": "/10",
+        "value": 7
+      },
+      {
+        "available": true,
+        "display_state": "shown_descriptively",
+        "group": "subjective_wellness",
+        "interpretation": "Shown for reference, not used in the trusted prediction",
+        "key": "fatigue",
+        "label": "Fatigue survey item",
+        "source_column": "fatigue",
+        "timing_label": "Timing not verified",
+        "timing_status": "date_only_ambiguous",
+        "unit": "/10",
+        "value": 3
+      },
+      {
+        "available": true,
+        "display_state": "shown_descriptively",
+        "group": "subjective_wellness",
+        "interpretation": "Shown for reference, not used in the trusted prediction",
+        "key": "soreness",
+        "label": "Soreness survey item",
+        "source_column": "soreness",
+        "timing_label": "Timing not verified",
+        "timing_status": "date_only_ambiguous",
+        "unit": "/10",
+        "value": 2
+      },
+      {
+        "available": true,
+        "display_state": "shown_descriptively",
+        "group": "match_context",
+        "interpretation": "Shown for reference, not used in the trusted prediction",
+        "key": "match_context",
+        "label": "Match context",
+        "source_column": "matchday_category",
+        "timing_label": "Timing not verified",
+        "timing_status": "date_only_ambiguous",
+        "unit": null,
+        "value": "MD"
+      },
+      {
+        "available": true,
+        "display_state": "shown_descriptively",
+        "group": "actigraphy",
+        "interpretation": "Shown for reference, not used in the trusted prediction",
+        "key": "actigraphy_vm",
+        "label": "Actigraphy vector magnitude",
+        "source_column": "actigraphy_vm_mean",
+        "timing_label": "Timing not verified",
+        "timing_status": "athlete_day_alignment_unverified",
+        "unit": "mean",
+        "value": 164.6
+      },
+      {
+        "available": true,
+        "display_state": "shown_descriptively",
+        "group": "actigraphy",
+        "interpretation": "Shown for reference, not used in the trusted prediction",
+        "key": "actigraphy_sleep_fraction",
+        "label": "LSTM sleep fraction",
+        "source_column": "actigraphy_LSTM_sleep_fraction",
+        "timing_label": "Timing not verified",
+        "timing_status": "athlete_day_alignment_unverified",
+        "unit": "fraction",
+        "value": 0.423
+      }
+    ],
+    "prediction_use": "Shown for reference, not used in the trusted prediction",
+    "timing_summary": "Timing relative to performance was not available"
+  },
+  "demo_mode": "read_only_static_frontend",
+  "generated_by": "src.demo.build_demo_data",
+  "missing_states": {
+    "limited_history": "Limited prior history",
+    "missing_actual": "Not available for this observation",
+    "missing_context": "Not available for this observation",
+    "missing_expected": "Expected value not available",
+    "no_defensible_date": "Observation sequence shown; no defensible calendar date",
+    "no_prior_observations": "More personal history is needed",
+    "timing_unverified": "Timing not verified"
+  },
+  "model_card": {
+    "expected_performance_definition": "prior_expanding_mean row-level prediction from Track A",
+    "future_data_requirements": [
+      "timestamped performance",
+      "survey submission time",
+      "timestamped caffeine",
+      "sleep start/end with timezone",
+      "exact calendar-date actigraphy alignment"
+    ],
+    "row_order_policy": "source_row_order_only_no_random_splits",
+    "timing_audit_decision": "metadata_insufficient",
+    "track_a_chronological_athlete_count": 15,
+    "track_a_chronological_mae_kg": 1.456,
+    "track_a_chronological_sample_count": 33,
+    "track_a_summary": "Track A uses prior personal handgrip history only.",
+    "track_b_best_contextual_delta_mae_kg_vs_track_a": 0.387,
+    "track_b_summary": "Contextual Track B features were evaluated experimentally and did not improve generalization in this dataset."
+  },
+  "provenance": {
+    "backend_required": false,
+    "model_outputs_mutated": false,
+    "private_identifiers_excluded": [
+      "athlete_id",
+      "observation_id"
+    ],
+    "raw_rest_mutated": false,
+    "sources": [
+      {
+        "bytes": 39826,
+        "path": "data/processed/track_a_features.csv",
+        "sha256": "45e296cf58c64609d86d50bc4b06b8bf42df00150f034b9372707f67c5708f15"
+      },
+      {
+        "bytes": 88736,
+        "path": "data/processed/track_b_features.csv",
+        "sha256": "c0d0c94a5b3ac536639ba9aba06045724ec7fefd05890d1f56a79a8d2e4cfbb5"
+      },
+      {
+        "bytes": 52381,
+        "path": "reports/track_a_predictions.csv",
+        "sha256": "db029596ef974bcabb0b00d7ad6b5a4dc5dc37464a23c1e8601379ca51f5f0fd"
+      },
+      {
+        "bytes": 3384,
+        "path": "reports/track_a_metrics.json",
+        "sha256": "b4ca278ab18283b7eb905452d77b83acd5f66a669dd6bd3d4a4a3ffaae42946e"
+      },
+      {
+        "bytes": 55763,
+        "path": "reports/track_b_timing_audit.json",
+        "sha256": "6cfcfb0c233ef41154663866f1a9b246aa06ae03a09fe2480b923f77e3556a48"
+      },
+      {
+        "bytes": 2713,
+        "path": "reports/model_comparison.json",
+        "sha256": "f9cf8ff84ae51145e7cf134a94e4471907a2e080a29514f61e82afefb6b9cfe4"
+      }
+    ]
+  },
+  "schema_version": "2026-09-01.1",
+  "selected_session": {
+    "actual_kg": 43.3,
+    "actual_percent_of_expected": 97.8,
+    "athlete_key": "athlete-01",
+    "athlete_label": "Athlete 01",
+    "comparison_direction": "below",
+    "date_label": null,
+    "date_state": "no_defensible_date",
+    "difference_kg": -0.98,
+    "difference_percent": -2.2,
+    "expected_label": "Expected from prior personal history",
+    "history_state": "expected_available",
+    "prior_observation_count": 11,
+    "session_key": "athlete-01-selected",
+    "session_label": "Most recent eligible observation",
+    "track_a_expected_kg": 44.28,
+    "track_a_prediction_source": {
+      "evaluation_fold": "chronological_holdout:last_30pct_per_athlete_min_1",
+      "model_name": "prior_expanding_mean",
+      "source_file": "reports/track_a_predictions.csv"
+    },
+    "weekday_label": "Saturday",
+    "x_axis_label": "Observation"
+  },
+  "selection_rule": {
+    "minimum_prior_observations": 3,
+    "name": "latest_eligible_observation_with_sufficient_prior_history",
+    "not_selected_by": [
+      "highest_performance",
+      "largest_residual",
+      "best_model_result"
+    ],
+    "selection_direction": "last",
+    "sort_order": [
+      "raw_daily_row_index",
+      "observation_id"
+    ]
+  },
+  "trend": {
+    "athlete_key": "athlete-01",
+    "axis_policy": "observation_sequence_no_calendar_dates",
+    "observations": [
+      {
+        "actual_kg": 45.7,
+        "difference_kg": null,
+        "expected_kg": null,
+        "history_state": "no_prior_observations",
+        "is_selected": false,
+        "label": "Observation 1",
+        "prior_observation_count": 0,
+        "sequence": 1
+      },
+      {
+        "actual_kg": 43.9,
+        "difference_kg": -1.8,
+        "expected_kg": 45.7,
+        "history_state": "limited_history",
+        "is_selected": false,
+        "label": "Observation 2",
+        "prior_observation_count": 1,
+        "sequence": 2
+      },
+      {
+        "actual_kg": 43.3,
+        "difference_kg": -1.5,
+        "expected_kg": 44.8,
+        "history_state": "limited_history",
+        "is_selected": false,
+        "label": "Observation 3",
+        "prior_observation_count": 2,
+        "sequence": 3
+      },
+      {
+        "actual_kg": 45.3,
+        "difference_kg": 1,
+        "expected_kg": 44.3,
+        "history_state": "expected_available",
+        "is_selected": false,
+        "label": "Observation 4",
+        "prior_observation_count": 3,
+        "sequence": 4
+      },
+      {
+        "actual_kg": 45.3,
+        "difference_kg": 0.75,
+        "expected_kg": 44.55,
+        "history_state": "expected_available",
+        "is_selected": false,
+        "label": "Observation 5",
+        "prior_observation_count": 4,
+        "sequence": 5
+      },
+      {
+        "actual_kg": 45.9,
+        "difference_kg": 1.2,
+        "expected_kg": 44.7,
+        "history_state": "expected_available",
+        "is_selected": false,
+        "label": "Observation 6",
+        "prior_observation_count": 5,
+        "sequence": 6
+      },
+      {
+        "actual_kg": 44.6,
+        "difference_kg": -0.3,
+        "expected_kg": 44.9,
+        "history_state": "expected_available",
+        "is_selected": false,
+        "label": "Observation 7",
+        "prior_observation_count": 6,
+        "sequence": 7
+      },
+      {
+        "actual_kg": 44.6,
+        "difference_kg": -0.26,
+        "expected_kg": 44.86,
+        "history_state": "expected_available",
+        "is_selected": false,
+        "label": "Observation 8",
+        "prior_observation_count": 7,
+        "sequence": 8
+      },
+      {
+        "actual_kg": 44.2,
+        "difference_kg": -0.62,
+        "expected_kg": 44.83,
+        "history_state": "expected_available",
+        "is_selected": false,
+        "label": "Observation 9",
+        "prior_observation_count": 8,
+        "sequence": 9
+      },
+      {
+        "actual_kg": 40.4,
+        "difference_kg": -4.36,
+        "expected_kg": 44.76,
+        "history_state": "expected_available",
+        "is_selected": false,
+        "label": "Observation 10",
+        "prior_observation_count": 9,
+        "sequence": 10
+      },
+      {
+        "actual_kg": 43.9,
+        "difference_kg": -0.42,
+        "expected_kg": 44.32,
+        "history_state": "expected_available",
+        "is_selected": false,
+        "label": "Observation 11",
+        "prior_observation_count": 10,
+        "sequence": 11
+      },
+      {
+        "actual_kg": 43.3,
+        "difference_kg": -0.98,
+        "expected_kg": 44.28,
+        "history_state": "expected_available",
+        "is_selected": true,
+        "label": "Observation 12",
+        "prior_observation_count": 11,
+        "sequence": 12
+      }
+    ]
+  }
+}

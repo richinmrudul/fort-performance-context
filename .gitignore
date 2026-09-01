@@ -30,6 +30,7 @@ data/processed/
 node_modules/
 frontend/dist/
 frontend/.next/
+frontend/*.tsbuildinfo
 
 # Raw datasets
 data/raw/*
