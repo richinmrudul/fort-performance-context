@@ -1,0 +1,1244 @@
+{
+  "actigraphy_findings": {
+    "available_identifiers": [
+      "athlete_id from filename",
+      "weekday",
+      "time of day"
+    ],
+    "exact_athlete_day_alignment": false,
+    "no_defensible_alignment": true,
+    "relative_day_alignment": false,
+    "status": "athlete_day_alignment_unverified",
+    "weekday_only_alignment": true
+  },
+  "audit_version": "2026-09-01.1",
+  "caffeine_findings": {
+    "classification": "ambiguous",
+    "fields": [
+      "caffeine_mg",
+      "caffeine_time_category",
+      "coffee_count",
+      "cola_count",
+      "tea_count",
+      "espresso_count",
+      "caffeine_present"
+    ],
+    "observed_time_labels": [
+      "Afternoon",
+      "Evening",
+      "Morning"
+    ],
+    "reason": "labels such as Morning, Afternoon, and Evening are not interpretable before/after handgrip without an independent handgrip time",
+    "status": "ordering_unverified",
+    "usable_ordering_from_labels": false
+  },
+  "exact_missing_metadata": [
+    "handgrip measurement timestamp",
+    "survey submission timestamp",
+    "daily response calendar date",
+    "daily response timezone",
+    "field-level event ordering within daily response",
+    "objective sleep interval calendar dates",
+    "proof objective sleep interval ended before handgrip",
+    "caffeine intake timestamp",
+    "subjective wellness recording timestamp",
+    "actigraphy calendar date mapping",
+    "actigraphy-to-target-day join key"
+  ],
+  "feature_group_classifications": {
+    "actigraphy": {
+      "evidence_type": "athlete plus weekday-only provisional join",
+      "exclusion_reason": "weekday-only matching does not prove exact athlete-day or previous-night alignment",
+      "source_fields": [
+        "REST/actigraphy/*.csv:weekday",
+        "REST/actigraphy/*.csv:time"
+      ],
+      "status": "athlete_day_alignment_unverified"
+    },
+    "caffeine": {
+      "evidence_type": "same daily row; caffeine_time labels only",
+      "exclusion_reason": "morning/afternoon/evening labels cannot be ordered relative to unknown handgrip time",
+      "source_fields": [
+        "caffeine_mg",
+        "caffeine_time_category",
+        "coffee_count",
+        "cola_count",
+        "tea_count",
+        "espresso_count",
+        "caffeine_present"
+      ],
+      "status": "ordering_unverified"
+    },
+    "match_context": {
+      "evidence_type": "same daily row; relative match labels",
+      "exclusion_reason": "match context does not establish prediction cutoff or feature availability before handgrip",
+      "source_fields": [
+        "REST/daily_responses.csv:matchday"
+      ],
+      "status": "date_only_ambiguous"
+    },
+    "objective_sleep": {
+      "evidence_type": "same daily row plus time-of-day sleep fields; no calendar date and no handgrip time",
+      "exclusion_reason": "sleep interval cannot be proven to end before handgrip",
+      "source_fields": [
+        "objective_total_sleep_time",
+        "objective_sleep_intervals",
+        "objective_longest_interval_duration",
+        "objective_sleep_period_mean",
+        "objective_sleep_period_standard_deviation",
+        "objective_sleep_period_msd",
+        "sleep_onset_minutes_after_midnight",
+        "sleep_offset_minutes_after_midnight",
+        "longest_interval_start_minutes_after_midnight",
+        "longest_interval_end_minutes_after_midnight"
+      ],
+      "status": "date_only_ambiguous"
+    },
+    "prior_history": {
+      "evidence_type": "inferred source-row ordering only",
+      "exclusion_reason": "prior features depend on source row order, which is not a documented pre-handgrip cutoff",
+      "source_fields": [
+        "prior_valid_handgrip_count",
+        "prior_expanding_handgrip_mean",
+        "prior_expanding_handgrip_median",
+        "prior_expanding_handgrip_std"
+      ],
+      "status": "ordering_unverified"
+    },
+    "subjective_wellness": {
+      "evidence_type": "same daily survey grouping only",
+      "exclusion_reason": "survey recording time is not proven before handgrip",
+      "source_fields": [
+        "sleepquality",
+        "sleepdura_sr",
+        "readiness",
+        "fatigue",
+        "soreness",
+        "soreness_location_1",
+        "soreness_location_2"
+      ],
+      "status": "date_only_ambiguous"
+    },
+    "target_handgrip": {
+      "evidence_type": "no documented timestamp",
+      "exclusion_reason": "handgrip has a value field but no measurement timestamp, sequence number, event order, or collection metadata",
+      "source_fields": [
+        "REST/daily_responses.csv:handgrip_kg"
+      ],
+      "status": "timestamp_unavailable"
+    }
+  },
+  "final_decision": "metadata_insufficient",
+  "objective_sleep_fields": [
+    {
+      "ambiguity": "handgrip timestamp unavailable; date and timezone unavailable",
+      "athlete_day_join_key": [
+        "athlete_id",
+        "raw_daily_row_index"
+      ],
+      "definitively_ends_before_handgrip": false,
+      "feature": "objective_total_sleep_time",
+      "raw_source_field": "total_sleep_time",
+      "sleep_interval_semantics": "field names indicate sleep interval summaries, but no data dictionary proves interval date or relation to performance",
+      "source_timestamp_or_date": "weekday plus time-of-day only; no calendar date or timezone",
+      "status": "date_only_ambiguous",
+      "timezone_assumptions": "timezone unavailable"
+    },
+    {
+      "ambiguity": "handgrip timestamp unavailable; date and timezone unavailable",
+      "athlete_day_join_key": [
+        "athlete_id",
+        "raw_daily_row_index"
+      ],
+      "definitively_ends_before_handgrip": false,
+      "feature": "objective_sleep_intervals",
+      "raw_source_field": "sleep_intervals",
+      "sleep_interval_semantics": "field names indicate sleep interval summaries, but no data dictionary proves interval date or relation to performance",
+      "source_timestamp_or_date": "weekday plus time-of-day only; no calendar date or timezone",
+      "status": "date_only_ambiguous",
+      "timezone_assumptions": "timezone unavailable"
+    },
+    {
+      "ambiguity": "handgrip timestamp unavailable; date and timezone unavailable",
+      "athlete_day_join_key": [
+        "athlete_id",
+        "raw_daily_row_index"
+      ],
+      "definitively_ends_before_handgrip": false,
+      "feature": "objective_longest_interval_duration",
+      "raw_source_field": "longest_interval_duration",
+      "sleep_interval_semantics": "field names indicate sleep interval summaries, but no data dictionary proves interval date or relation to performance",
+      "source_timestamp_or_date": "weekday plus time-of-day only; no calendar date or timezone",
+      "status": "date_only_ambiguous",
+      "timezone_assumptions": "timezone unavailable"
+    },
+    {
+      "ambiguity": "handgrip timestamp unavailable; date and timezone unavailable",
+      "athlete_day_join_key": [
+        "athlete_id",
+        "raw_daily_row_index"
+      ],
+      "definitively_ends_before_handgrip": false,
+      "feature": "objective_sleep_period_mean",
+      "raw_source_field": "sleep period mean",
+      "sleep_interval_semantics": "field names indicate sleep interval summaries, but no data dictionary proves interval date or relation to performance",
+      "source_timestamp_or_date": "weekday plus time-of-day only; no calendar date or timezone",
+      "status": "date_only_ambiguous",
+      "timezone_assumptions": "timezone unavailable"
+    },
+    {
+      "ambiguity": "handgrip timestamp unavailable; date and timezone unavailable",
+      "athlete_day_join_key": [
+        "athlete_id",
+        "raw_daily_row_index"
+      ],
+      "definitively_ends_before_handgrip": false,
+      "feature": "objective_sleep_period_standard_deviation",
+      "raw_source_field": "sleep period standard deviation",
+      "sleep_interval_semantics": "field names indicate sleep interval summaries, but no data dictionary proves interval date or relation to performance",
+      "source_timestamp_or_date": "weekday plus time-of-day only; no calendar date or timezone",
+      "status": "date_only_ambiguous",
+      "timezone_assumptions": "timezone unavailable"
+    },
+    {
+      "ambiguity": "handgrip timestamp unavailable; date and timezone unavailable",
+      "athlete_day_join_key": [
+        "athlete_id",
+        "raw_daily_row_index"
+      ],
+      "definitively_ends_before_handgrip": false,
+      "feature": "objective_sleep_period_msd",
+      "raw_source_field": "sleep period msd",
+      "sleep_interval_semantics": "field names indicate sleep interval summaries, but no data dictionary proves interval date or relation to performance",
+      "source_timestamp_or_date": "weekday plus time-of-day only; no calendar date or timezone",
+      "status": "date_only_ambiguous",
+      "timezone_assumptions": "timezone unavailable"
+    },
+    {
+      "ambiguity": "handgrip timestamp unavailable; date and timezone unavailable",
+      "athlete_day_join_key": [
+        "athlete_id",
+        "raw_daily_row_index"
+      ],
+      "definitively_ends_before_handgrip": false,
+      "feature": "sleep_onset_minutes_after_midnight",
+      "raw_source_field": "sleep_onset",
+      "sleep_interval_semantics": "field names indicate sleep interval summaries, but no data dictionary proves interval date or relation to performance",
+      "source_timestamp_or_date": "weekday plus time-of-day only; no calendar date or timezone",
+      "status": "date_only_ambiguous",
+      "timezone_assumptions": "timezone unavailable"
+    },
+    {
+      "ambiguity": "handgrip timestamp unavailable; date and timezone unavailable",
+      "athlete_day_join_key": [
+        "athlete_id",
+        "raw_daily_row_index"
+      ],
+      "definitively_ends_before_handgrip": false,
+      "feature": "sleep_offset_minutes_after_midnight",
+      "raw_source_field": "sleep_offset",
+      "sleep_interval_semantics": "field names indicate sleep interval summaries, but no data dictionary proves interval date or relation to performance",
+      "source_timestamp_or_date": "weekday plus time-of-day only; no calendar date or timezone",
+      "status": "date_only_ambiguous",
+      "timezone_assumptions": "timezone unavailable"
+    },
+    {
+      "ambiguity": "handgrip timestamp unavailable; date and timezone unavailable",
+      "athlete_day_join_key": [
+        "athlete_id",
+        "raw_daily_row_index"
+      ],
+      "definitively_ends_before_handgrip": false,
+      "feature": "longest_interval_start_minutes_after_midnight",
+      "raw_source_field": "longest_interval_start",
+      "sleep_interval_semantics": "field names indicate sleep interval summaries, but no data dictionary proves interval date or relation to performance",
+      "source_timestamp_or_date": "weekday plus time-of-day only; no calendar date or timezone",
+      "status": "date_only_ambiguous",
+      "timezone_assumptions": "timezone unavailable"
+    },
+    {
+      "ambiguity": "handgrip timestamp unavailable; date and timezone unavailable",
+      "athlete_day_join_key": [
+        "athlete_id",
+        "raw_daily_row_index"
+      ],
+      "definitively_ends_before_handgrip": false,
+      "feature": "longest_interval_end_minutes_after_midnight",
+      "raw_source_field": "longest_interval_end",
+      "sleep_interval_semantics": "field names indicate sleep interval summaries, but no data dictionary proves interval date or relation to performance",
+      "source_timestamp_or_date": "weekday plus time-of-day only; no calendar date or timezone",
+      "status": "date_only_ambiguous",
+      "timezone_assumptions": "timezone unavailable"
+    }
+  ],
+  "prediction_cutoff_findings": {
+    "cutoff_policy": "cutoff cannot be fabricated from row order, file order, file modification time, ingestion time, result time, or assumed time of day",
+    "rows": [
+      {
+        "athlete_id": "9cee6de4-93b3-46a7-a018-90f60d705ebb",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_a4f0947d555bcfe1",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "9cee6de4-93b3-46a7-a018-90f60d705ebb",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_b0a59a0abf0c6f21",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "9cee6de4-93b3-46a7-a018-90f60d705ebb",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_ad64c57187148a23",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "9cee6de4-93b3-46a7-a018-90f60d705ebb",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_bdb6766b9448f55b",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "9cee6de4-93b3-46a7-a018-90f60d705ebb",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_96bd7b99fb596da4",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "9cee6de4-93b3-46a7-a018-90f60d705ebb",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_aa66a200e387eba4",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "8d47422f-2512-44a3-a6d6-8feb726f4759",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_b711ef41b7e72a58",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "8d47422f-2512-44a3-a6d6-8feb726f4759",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_0056b953332cf48c",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "8d47422f-2512-44a3-a6d6-8feb726f4759",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_9576a5f6cfbca811",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "8d47422f-2512-44a3-a6d6-8feb726f4759",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_2b0ad7da5f00c7fb",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "ec3fc0a0-ab15-4c0c-b1ad-5243c6e5636f",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_cdf2c1790b6b6b77",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "ec3fc0a0-ab15-4c0c-b1ad-5243c6e5636f",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_cd58435642eb8af3",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "ec3fc0a0-ab15-4c0c-b1ad-5243c6e5636f",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_f086eef85301ad30",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "ec3fc0a0-ab15-4c0c-b1ad-5243c6e5636f",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_c1dfb58557a561b2",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "ec3fc0a0-ab15-4c0c-b1ad-5243c6e5636f",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_c72954ac52f3c08e",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "ec3fc0a0-ab15-4c0c-b1ad-5243c6e5636f",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_50f6f1543ffe74e1",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "f2b08928-a410-4d1d-9f19-1f8c063a6311",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_6c805b4dd0c2cf3f",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "86fed448-f51d-4005-aef8-bd9413933cbe",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_f4e5f2267c6c0457",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "86fed448-f51d-4005-aef8-bd9413933cbe",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_1b54b101c18e95b5",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "86fed448-f51d-4005-aef8-bd9413933cbe",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_7f7a9baf479d195c",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "86fed448-f51d-4005-aef8-bd9413933cbe",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_f98b6f0e56bf0285",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "86fed448-f51d-4005-aef8-bd9413933cbe",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_5091bf99d5924eac",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "86fed448-f51d-4005-aef8-bd9413933cbe",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_472237620c8063bf",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "86fed448-f51d-4005-aef8-bd9413933cbe",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_a309a15592c25132",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "86fed448-f51d-4005-aef8-bd9413933cbe",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_bea3758949606720",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "a2d89dcf-6bd1-445b-bc9c-7ac6b852a9fc",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_82442f8e52aa8256",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "a2d89dcf-6bd1-445b-bc9c-7ac6b852a9fc",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_baa5ee6cfc8f59b5",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "a2d89dcf-6bd1-445b-bc9c-7ac6b852a9fc",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_9afc4bb4cc991ef9",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "a2d89dcf-6bd1-445b-bc9c-7ac6b852a9fc",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_7f8eb3142fb05b5e",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "a2d89dcf-6bd1-445b-bc9c-7ac6b852a9fc",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_1c3acd1f7c8cf85f",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "a2d89dcf-6bd1-445b-bc9c-7ac6b852a9fc",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_a5cab1550d5946e9",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "6a2ca03c-e61b-4589-a931-58f5e25aacd8",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_1a821f8053bae41e",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "957de0b1-7ee9-437c-b47b-dffd09b6653a",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_1fdf1d5bbe31da02",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "957de0b1-7ee9-437c-b47b-dffd09b6653a",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_ce8b5b7b591dd0fd",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "957de0b1-7ee9-437c-b47b-dffd09b6653a",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_5725581e019f5fa6",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "957de0b1-7ee9-437c-b47b-dffd09b6653a",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_9fdde10651bde0b4",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "957de0b1-7ee9-437c-b47b-dffd09b6653a",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_4cc527b910742f5f",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "957de0b1-7ee9-437c-b47b-dffd09b6653a",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_a682083333fcffda",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "957de0b1-7ee9-437c-b47b-dffd09b6653a",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_baad225df3d4f040",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "957de0b1-7ee9-437c-b47b-dffd09b6653a",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_24526a257b340324",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "957de0b1-7ee9-437c-b47b-dffd09b6653a",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_f51837b525fe2758",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "e362b878-9920-4dcf-9ab7-687a194a821c",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_44c060af4bc142ed",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "e362b878-9920-4dcf-9ab7-687a194a821c",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_e1f7ae429e1b28de",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "e362b878-9920-4dcf-9ab7-687a194a821c",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_23de18e0c8746cd7",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "e362b878-9920-4dcf-9ab7-687a194a821c",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_19d7ba07a6d15f62",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "e362b878-9920-4dcf-9ab7-687a194a821c",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_6f1321ab0e065ca1",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "e362b878-9920-4dcf-9ab7-687a194a821c",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_8b1130c2e482bf87",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "e362b878-9920-4dcf-9ab7-687a194a821c",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_aac7a0cea32a78f6",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "687552ea-5963-45df-8680-c4c6058eab87",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_6f910bb9a01cd557",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "687552ea-5963-45df-8680-c4c6058eab87",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_21d41c9eaff91990",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "687552ea-5963-45df-8680-c4c6058eab87",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_12a68c9036898205",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "687552ea-5963-45df-8680-c4c6058eab87",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_e3c98654c7975c33",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "687552ea-5963-45df-8680-c4c6058eab87",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_bb1d299fe508ad69",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "687552ea-5963-45df-8680-c4c6058eab87",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_1b6135ddcedae6ca",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "687552ea-5963-45df-8680-c4c6058eab87",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_b5aee6d21878a523",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "c887cb7e-63cf-4dc2-9fd2-8429137ba44b",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_a157f3bb920fa92f",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "c887cb7e-63cf-4dc2-9fd2-8429137ba44b",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_b8e40341f54d9616",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "c887cb7e-63cf-4dc2-9fd2-8429137ba44b",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_1759366c50384ac7",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "c887cb7e-63cf-4dc2-9fd2-8429137ba44b",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_0663b3b3ac8bbc8c",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "c887cb7e-63cf-4dc2-9fd2-8429137ba44b",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_64860edccfee005f",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "c887cb7e-63cf-4dc2-9fd2-8429137ba44b",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_b66d89d81131cac9",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "c887cb7e-63cf-4dc2-9fd2-8429137ba44b",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_462b7d0d1d4cce3d",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "e6e4e3b9-5cfa-42c6-a4cd-0f96561de3eb",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_6f2bd48791757d01",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "e6e4e3b9-5cfa-42c6-a4cd-0f96561de3eb",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_02d5b5624ca2a01d",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "e6e4e3b9-5cfa-42c6-a4cd-0f96561de3eb",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_5a6dee4fcd56dbce",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "e6e4e3b9-5cfa-42c6-a4cd-0f96561de3eb",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_ab17f1fc7853a9d6",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "e6e4e3b9-5cfa-42c6-a4cd-0f96561de3eb",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_9f0c016dc4398960",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "e6e4e3b9-5cfa-42c6-a4cd-0f96561de3eb",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_0454c91c3fc710e8",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "efa2dbe6-24c0-4500-8b7b-1d5d14e1d271",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_d6526cc6a798964b",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "efa2dbe6-24c0-4500-8b7b-1d5d14e1d271",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_1041700280114f2c",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "efa2dbe6-24c0-4500-8b7b-1d5d14e1d271",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_3cf67d5887d878f8",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "fd0c9e61-cb99-4d60-ab37-b4b3f5ac60d2",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_82682445d3ee10d1",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "fd0c9e61-cb99-4d60-ab37-b4b3f5ac60d2",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_05f48e6e719ac92e",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "fd0c9e61-cb99-4d60-ab37-b4b3f5ac60d2",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_efc572538dfe1a10",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "fd0c9e61-cb99-4d60-ab37-b4b3f5ac60d2",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_01b75bd63b9e0e56",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "fd0c9e61-cb99-4d60-ab37-b4b3f5ac60d2",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_7c83bde87c5be749",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "fd0c9e61-cb99-4d60-ab37-b4b3f5ac60d2",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_568874402ae121a6",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "fd0c9e61-cb99-4d60-ab37-b4b3f5ac60d2",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_e6273f94a99ad120",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "fd0c9e61-cb99-4d60-ab37-b4b3f5ac60d2",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_addc070e41582078",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "2068e7ec-51a8-441a-8053-2be7533e613f",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_e0fe6a57d5ba3bee",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "2068e7ec-51a8-441a-8053-2be7533e613f",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_d493fee7cfdb999b",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "2068e7ec-51a8-441a-8053-2be7533e613f",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_302c1fbaac2944d8",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "2068e7ec-51a8-441a-8053-2be7533e613f",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_91c3ba85eea8d163",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      },
+      {
+        "athlete_id": "2068e7ec-51a8-441a-8053-2be7533e613f",
+        "defensible_prediction_cutoff_exists": false,
+        "observation_id": "rest_daily_0a396a843fa902b0",
+        "reason": "no source field provides handgrip measurement time or a pre-handgrip survey submission time",
+        "status": "timestamp_unavailable"
+      }
+    ],
+    "rows_checked": 84,
+    "rows_with_defensible_cutoff": 0,
+    "rows_without_defensible_cutoff": 84
+  },
+  "raw_and_processed_data_hashes": {
+    "processed_and_reports": [
+      {
+        "bytes": 88736,
+        "path": "data/processed/track_b_features.csv",
+        "sha256": "c0d0c94a5b3ac536639ba9aba06045724ec7fefd05890d1f56a79a8d2e4cfbb5"
+      },
+      {
+        "bytes": 42057,
+        "path": "reports/track_b_feature_audit.json",
+        "sha256": "dbc76f5bb17959e39b589dc8a4124ca2cf5e17effd0f9ff0fa88bb568d958756"
+      },
+      {
+        "bytes": 42662,
+        "path": "reports/track_b_missingness.json",
+        "sha256": "cf45bc18168ab1541264fd86252eb15382e9c8e5e0857837b1a1865a7f7e3665"
+      },
+      {
+        "bytes": 23337,
+        "path": "reports/track_b_feature_summary.json",
+        "sha256": "719efd6a3fc8c7db08979d9b3784eb6c2fa7acc9caa6a41c41dc7f85fe7925b1"
+      },
+      {
+        "bytes": 317567,
+        "path": "reports/track_b_metrics.json",
+        "sha256": "e9053f14b6036fd15425eb5e6de6df1d9ed8eba1395dfe904aecd399414e58d4"
+      },
+      {
+        "bytes": 807808,
+        "path": "reports/track_b_predictions.csv",
+        "sha256": "4d0a1d79af2e223d4937db87bc0b80a4e2548056d12fa21fd7b6dff94f50a47f"
+      },
+      {
+        "bytes": 28011,
+        "path": "reports/track_b_bootstrap.json",
+        "sha256": "32d775718a35a0cfa17fc7a2439ac05320286641294b6ecadeee25143504eb8a"
+      },
+      {
+        "bytes": 81913,
+        "path": "reports/track_b_per_athlete.csv",
+        "sha256": "fc4432bf6512bc8096710768548d2b22f8cf258d7fb848051245276c820c6d91"
+      },
+      {
+        "bytes": 13896,
+        "path": "reports/track_b_stability.json",
+        "sha256": "47bea0fd9d7236a496af78cbf4db3336fb2449240e303f549cda3a84cdad1faa"
+      }
+    ],
+    "raw": {
+      "archive": {
+        "path": "data/raw/REST.zip",
+        "sha256": "5ea61adf935f4baa2353ab023d894375123d17fc39798d2604335a31e170e966"
+      },
+      "members": [
+        {
+          "bytes": 5152309,
+          "member": "REST/actigraphy/1e9c2639-3cbc-4edf-884e-78907d9e5d21.csv",
+          "sha256": "3f4dbbd2fec596bcebce738ff268fdfe3cc726600ec917bbdeee28d7951c7882"
+        },
+        {
+          "bytes": 5145100,
+          "member": "REST/actigraphy/2068e7ec-51a8-441a-8053-2be7533e613f.csv",
+          "sha256": "114644c99c48fde831e74cd1e16b6ea54145cd793eaf8bf2aa60d1ece7b0d88a"
+        },
+        {
+          "bytes": 5157748,
+          "member": "REST/actigraphy/59fa9f7b-8f90-436d-a53d-1f8f65fef412.csv",
+          "sha256": "7a507c105451de5945dbcd6491ae409a4fd0979360e2b34afba3cfdad02205bc"
+        },
+        {
+          "bytes": 5150737,
+          "member": "REST/actigraphy/687552ea-5963-45df-8680-c4c6058eab87.csv",
+          "sha256": "4573c05822a98675bb6c4c46197edbc1b9cdad1dae52568a35425a50b82f694c"
+        },
+        {
+          "bytes": 5155164,
+          "member": "REST/actigraphy/6a2ca03c-e61b-4589-a931-58f5e25aacd8.csv",
+          "sha256": "eb568ffcedb2e02e893804d089874331966347f32ef2675edba1e532cf0c4778"
+        },
+        {
+          "bytes": 5151724,
+          "member": "REST/actigraphy/86fed448-f51d-4005-aef8-bd9413933cbe.csv",
+          "sha256": "b11caf9a5e36a853d94b8e329a9d866af5a57fdc7cbf31b1abf608c6a3cdfacd"
+        },
+        {
+          "bytes": 5156341,
+          "member": "REST/actigraphy/8d47422f-2512-44a3-a6d6-8feb726f4759.csv",
+          "sha256": "7186e81c887f4e66efce1fdb0d124dd951e2eb376863cb8f0bf4fea96fd9565f"
+        },
+        {
+          "bytes": 5148756,
+          "member": "REST/actigraphy/957de0b1-7ee9-437c-b47b-dffd09b6653a.csv",
+          "sha256": "6b1cd1f228c917d93230d0316a967ba5385150fa896e34c684947c3a642b88dc"
+        },
+        {
+          "bytes": 5150177,
+          "member": "REST/actigraphy/9cee6de4-93b3-46a7-a018-90f60d705ebb.csv",
+          "sha256": "7503ae36df8afe553ed5cfa4cb17f5a0a2171a5d7f5684557bb2dd5cce5ab431"
+        },
+        {
+          "bytes": 5143975,
+          "member": "REST/actigraphy/a2d89dcf-6bd1-445b-bc9c-7ac6b852a9fc.csv",
+          "sha256": "93cbab2126eea89a4ac452831beb646dfae6230b6eee03a0b52717479a8f1744"
+        },
+        {
+          "bytes": 5161567,
+          "member": "REST/actigraphy/bc3f9a9f-bbef-4c40-831a-3d57c93ec5c6.csv",
+          "sha256": "feff7324459601187bc1f6af26d893fb166ccba0c3a44c3d178301837f436421"
+        },
+        {
+          "bytes": 5146958,
+          "member": "REST/actigraphy/c887cb7e-63cf-4dc2-9fd2-8429137ba44b.csv",
+          "sha256": "4c78e9877071e468f315518883ed9443fd18eb63ab608697aee0817024c43acd"
+        },
+        {
+          "bytes": 5149274,
+          "member": "REST/actigraphy/d4a33ef9-bb09-482b-a4cb-2e76bfbec86a.csv",
+          "sha256": "66645a850caae025dced29fe46143ad40e14c58ff9937d89ee1fecce8fee977d"
+        },
+        {
+          "bytes": 5148396,
+          "member": "REST/actigraphy/d781118d-8329-44f6-8b34-6c36f08d450a.csv",
+          "sha256": "babd89264bdabf939bb87d4115121833e18f760cf797e5dcc9ec58a64cbb0d48"
+        },
+        {
+          "bytes": 5148116,
+          "member": "REST/actigraphy/e362b878-9920-4dcf-9ab7-687a194a821c.csv",
+          "sha256": "658ff947925fbe4fdc13269b07a302b4054c8f56995cbd68d88ab8592d969637"
+        },
+        {
+          "bytes": 5161467,
+          "member": "REST/actigraphy/e6e4e3b9-5cfa-42c6-a4cd-0f96561de3eb.csv",
+          "sha256": "3388c57bcea64b57f24c9ab6cab3472f19eec08256a682b833bbfa4dcce4a0ef"
+        },
+        {
+          "bytes": 5148151,
+          "member": "REST/actigraphy/ec3fc0a0-ab15-4c0c-b1ad-5243c6e5636f.csv",
+          "sha256": "f18e25708b698cb3dddbc6bea5728059af8fd2aa8308b3fdc39d9369edc4fea2"
+        },
+        {
+          "bytes": 5160269,
+          "member": "REST/actigraphy/efa2dbe6-24c0-4500-8b7b-1d5d14e1d271.csv",
+          "sha256": "86a06c46a21a9342527ca254f2d8208880c54f0a459b040c74c50095cd57bc70"
+        },
+        {
+          "bytes": 5151106,
+          "member": "REST/actigraphy/f2b08928-a410-4d1d-9f19-1f8c063a6311.csv",
+          "sha256": "914c359b4889c91d70afee9a97764c3d0cb895efacb69a3f52b8a357d276918d"
+        },
+        {
+          "bytes": 5145819,
+          "member": "REST/actigraphy/f2e703f8-e6e8-4308-9723-b87e8258a49f.csv",
+          "sha256": "9a6748625c8a9f649b24d539d362a67fc855813ed6f907d1dcf334d739f36389"
+        },
+        {
+          "bytes": 5146859,
+          "member": "REST/actigraphy/fd0c9e61-cb99-4d60-ab37-b4b3f5ac60d2.csv",
+          "sha256": "36db3dc3f1025bcf59f61e63ae3f1527621e6d9fa80d066cfff033f1f54e8271"
+        },
+        {
+          "bytes": 72539,
+          "member": "REST/daily_responses.csv",
+          "sha256": "ed98033c88648e3ddeb72ae284a56c310c5e293ec75a13a51a4361a5350f8b28"
+        },
+        {
+          "bytes": 7444,
+          "member": "REST/initial_questionnaire.csv",
+          "sha256": "dc532525e90161b0e2eb75c0dcb7042b85bc7a59aea22c9e28f6152fcff30a3c"
+        }
+      ]
+    }
+  },
+  "row_and_athlete_counts": {
+    "track_b_athletes": 15,
+    "track_b_rows": 84
+  },
+  "source_timing_inventory": {
+    "actigraphy_sequence": {
+      "alignment_support": "weekday-only alignment; no calendar date or target-day key",
+      "athlete_file_count": 21,
+      "examples": [
+        {
+          "first_weekday_time": "Friday 14:00:00",
+          "last_weekday_time": "Monday 09:59:30",
+          "member": "REST/actigraphy/1e9c2639-3cbc-4edf-884e-78907d9e5d21.csv",
+          "rows": 48480,
+          "sequence_status": "valid_30s_sequence"
+        },
+        {
+          "first_weekday_time": "Friday 14:00:00",
+          "last_weekday_time": "Monday 09:59:30",
+          "member": "REST/actigraphy/2068e7ec-51a8-441a-8053-2be7533e613f.csv",
+          "rows": 48480,
+          "sequence_status": "valid_30s_sequence"
+        },
+        {
+          "first_weekday_time": "Friday 14:00:00",
+          "last_weekday_time": "Monday 09:59:30",
+          "member": "REST/actigraphy/59fa9f7b-8f90-436d-a53d-1f8f65fef412.csv",
+          "rows": 48480,
+          "sequence_status": "valid_30s_sequence"
+        }
+      ],
+      "sequence_statuses": [
+        "valid_30s_sequence"
+      ],
+      "status": "athlete_day_alignment_unverified"
+    },
+    "handgrip_timing": {
+      "date_only_association": "weekday label only; no calendar date",
+      "documented_timestamp": false,
+      "file_or_row_order": "present but explicitly not used as timing evidence",
+      "inferred_ordering": "source row order exists but is not proof",
+      "no_timing_evidence": true,
+      "status": "timestamp_unavailable"
+    },
+    "schemas": {
+      "actigraphy": {
+        "athlete_id_source": "actigraphy filename stem",
+        "columns": [
+          "Unnamed: 0",
+          "x",
+          "y",
+          "z",
+          "CK",
+          "Oakley",
+          "Sadeh",
+          "fourier_HMM",
+          "vm",
+          "LSTM",
+          "weekday",
+          "time"
+        ],
+        "date_fields_found": [],
+        "example_member": "REST/actigraphy/1e9c2639-3cbc-4edf-884e-78907d9e5d21.csv",
+        "time_of_day_field": "time",
+        "timestamp_fields_found": [],
+        "weekday_field": "weekday"
+      },
+      "daily_responses": {
+        "columns": [
+          "sleep_onset",
+          "sleep_offset",
+          "total_sleep_time",
+          "sleep_intervals",
+          "longest_interval_start",
+          "longest_interval_end",
+          "longest_interval_duration",
+          "sleep period mean",
+          "sleep period standard deviation",
+          "sleep period msd",
+          "id",
+          "screentime",
+          "Comments (optional)",
+          "energy",
+          "cola",
+          "coffee",
+          "tea",
+          "espresso",
+          "caffeine_time",
+          "sleepquality",
+          "handgrip_kg",
+          "matchday",
+          "fatigue",
+          "soreness",
+          "soreness_location_1",
+          "soreness_location_2",
+          "readiness",
+          "sleepdura_sr",
+          "caffeine_mg",
+          "weekday"
+        ],
+        "date_fields_found": [],
+        "handgrip_field": "handgrip_kg",
+        "member": "REST/daily_responses.csv",
+        "rows": 370,
+        "time_of_day_fields": [
+          "sleep_onset",
+          "sleep_offset",
+          "longest_interval_start",
+          "longest_interval_end"
+        ],
+        "timestamp_fields_found": [],
+        "weekday_field": "weekday"
+      },
+      "initial_questionnaire": {
+        "columns": [
+          "Age",
+          "Your height in centimeters (cm)",
+          "Your weight in kilograms (kg)",
+          "Placement of the sensor (left or right, and if dominant hand)",
+          "Do you use Nicotine regularly (Ex: smoking, snus)?",
+          "Do you use contraceptives (containing estrogen, progesterone)",
+          "Athlete Sleep Behaviour Questionnaire (ASBQ) [I take afternoon naps lasting two or more hours]",
+          "Athlete Sleep Behaviour Questionnaire (ASBQ) [I use stimulants when I train/compete (e.g caffeine)]",
+          "Athlete Sleep Behaviour Questionnaire (ASBQ) [I exercise (train or compete) late at night (after 7pm)]",
+          "Athlete Sleep Behaviour Questionnaire (ASBQ) [I consume alcohol within 4 hours of going to bed]",
+          "Athlete Sleep Behaviour Questionnaire (ASBQ) [I go to bed at different times each night (more than \u00b11 hour variation)]",
+          "Athlete Sleep Behaviour Questionnaire (ASBQ) [I go to bed feeling thirsty]",
+          "Athlete Sleep Behaviour Questionnaire (ASBQ) [I go to bed with sore muscles]",
+          "Athlete Sleep Behaviour Questionnaire (ASBQ) [I use light-emitting technology in the hour leading up to bedtime (e.g laptop, phone, television, video games)]",
+          "Athlete Sleep Behaviour Questionnaire (ASBQ) [I think, plan and worry about my sporting performance when I am in bed]",
+          "Athlete Sleep Behaviour Questionnaire (ASBQ) [I think, plan and worry about issues not related to my sport when I am in bed]",
+          "Athlete Sleep Behaviour Questionnaire (ASBQ) [I use sleeping pills/tablets to help me sleep]",
+          "Athlete Sleep Behaviour Questionnaire (ASBQ) [I wake to go to the bathroom more than once per night]",
+          "Athlete Sleep Behaviour Questionnaire (ASBQ) [I wake myself and/or my bed partner with my snoring]",
+          "Athlete Sleep Behaviour Questionnaire (ASBQ) [I wake myself and/or my bed partner with my muscle twitching]",
+          "Athlete Sleep Behaviour Questionnaire (ASBQ) [I get up at different times each morning (more than \u00b11 hour variation)]",
+          "Athlete Sleep Behaviour Questionnaire (ASBQ) [At home, I sleep in a less than ideal environment (e.g too light, too noisy, uncomfortable bed/pillow, too hot/cold)]",
+          "Athlete Sleep Behaviour Questionnaire (ASBQ) [I sleep in foreign environments (e.g hotel rooms)]",
+          "Athlete Sleep Behaviour Questionnaire (ASBQ) [Travel gets in the way of building a consistent sleep-wake routine]",
+          "Do you use any sleep medication? (Melatonin, others)",
+          "Comments (optional)",
+          "id"
+        ],
+        "date_fields_found": [],
+        "member": "REST/initial_questionnaire.csv",
+        "rows": 22,
+        "timestamp_fields_found": []
+      }
+    }
+  },
+  "subjective_wellness_findings": {
+    "exploratory_only": true,
+    "fields": [
+      "sleepquality",
+      "sleepdura_sr",
+      "readiness",
+      "fatigue",
+      "soreness",
+      "soreness_location_1",
+      "soreness_location_2"
+    ],
+    "reason": "same-row survey grouping does not prove survey answers were recorded before handgrip",
+    "status": "date_only_ambiguous"
+  },
+  "timing_safe_cohort_summary": {
+    "athlete_count": 0,
+    "exact_timing_evidence_used": [],
+    "excluded_feature_groups": [
+      {
+        "exclusion_reason": "weekday-only matching does not prove exact athlete-day or previous-night alignment",
+        "feature_group": "actigraphy",
+        "status": "athlete_day_alignment_unverified"
+      },
+      {
+        "exclusion_reason": "morning/afternoon/evening labels cannot be ordered relative to unknown handgrip time",
+        "feature_group": "caffeine",
+        "status": "ordering_unverified"
+      },
+      {
+        "exclusion_reason": "match context does not establish prediction cutoff or feature availability before handgrip",
+        "feature_group": "match_context",
+        "status": "date_only_ambiguous"
+      },
+      {
+        "exclusion_reason": "sleep interval cannot be proven to end before handgrip",
+        "feature_group": "objective_sleep",
+        "status": "date_only_ambiguous"
+      },
+      {
+        "exclusion_reason": "prior features depend on source row order, which is not a documented pre-handgrip cutoff",
+        "feature_group": "prior_history",
+        "status": "ordering_unverified"
+      },
+      {
+        "exclusion_reason": "survey recording time is not proven before handgrip",
+        "feature_group": "subjective_wellness",
+        "status": "date_only_ambiguous"
+      }
+    ],
+    "row_count": 0,
+    "surviving_feature_groups": []
+  }
+}
