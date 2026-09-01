@@ -18,17 +18,17 @@ The primary hierarchy is:
 
 ## 2. Screen And Component Set
 
-The frontend uses four compact sections:
+The frontend uses a restrained editorial sequence:
 
-- Athlete overview: privacy-safe athlete label, selected eligible session,
-  actual kg, percent of expectation, kg difference, prior observation count, and
-  a compact trend strip.
-- Session detail: actual value, Track A expected value, above/below expectation,
-  prior-history explanation, and nearby observations.
+- Result hero: privacy-safe athlete/session label and percent of expectation.
+- Supporting metrics: actual value, Track A expected value, neutral difference,
+  and prior observation count.
 - Performance trend: lightweight SVG trend with actual handgrip and Track A
   expectation when available. Early observations show limited-history states.
-- Context and transparency: descriptive sleep, caffeine, wellness, match, and
-  actigraphy context plus a compact model/data card.
+- Descriptive context: sleep, caffeine, wellness, match, and actigraphy values
+  shown as reference facts with shared timing caveats.
+- Transparency: model/data limits and future production data needs in a
+  secondary semantic disclosure.
 
 ## 3. Source Files Powering Each View
 
@@ -119,11 +119,12 @@ actigraphy predicted, explained, caused, improved, or reduced performance.
 
 ## 8. Desktop And Mobile Layout
 
-Desktop around 1440 px uses a compact two-column product surface:
+Desktop around 1440 px uses a spacious product surface:
 
-- Left/top emphasis: overview and session detail.
-- Right/supporting emphasis: trend, context, and methodology.
-- Sections remain visible without a bloated admin dashboard feel.
+- Top emphasis: editorial result hero.
+- Middle emphasis: actual-versus-expected metrics and personal trend.
+- Lower emphasis: descriptive context, followed by methodology disclosure.
+- Sections use whitespace and subtle dividers instead of dense boxed panels.
 
 Mobile around 375-390 px uses a single column:
 
@@ -134,15 +135,17 @@ Mobile around 375-390 px uses a single column:
 
 ## 9. Visual System
 
-The visual direction is modern fitness/wearable, serious, and evidence-oriented:
+The visual direction is premium wearable-product, serious, and evidence-oriented:
 
-- Charcoal/navy foundation.
-- Off-white text and surfaces.
-- Restrained teal/cyan/lime accents for performance comparison.
-- Compact cards with 8 px or smaller radius.
+- Warm off-white foundation.
+- Near-black text with muted secondary copy.
+- One restrained green accent for result emphasis.
+- Subtle dividers, little shadow, and restrained 8 px radius only where framing
+  helps readability.
+- Large, clean display typography with generous vertical rhythm.
 - Lightweight SVG charting.
 - No stock photography, medical imagery, arbitrary gauges, excessive gradients,
-  or glassmorphism.
+  glassmorphism, dense card grids, or demotivating failure treatment.
 - Color is never the only indicator; labels and signs are always present.
 
 ## 10. Accessibility Approach

@@ -5,8 +5,8 @@ type TrendChartProps = {
 };
 
 const width = 720;
-const height = 260;
-const padding = { top: 26, right: 28, bottom: 42, left: 48 };
+const height = 300;
+const padding = { top: 34, right: 34, bottom: 52, left: 54 };
 
 function pathFor(points: Array<{ x: number; y: number }>) {
   return points.map((point, index) => `${index === 0 ? "M" : "L"} ${point.x} ${point.y}`).join(" ");
@@ -34,9 +34,16 @@ export function TrendChart({ observations }: TrendChartProps) {
   const actualPoints = actualRows.map((row) => point(row, row.actual_kg as number));
   const expectedPoints = expectedRows.map((row) => point(row, row.expected_kg as number));
   const selected = observations.find((row) => row.is_selected);
+  const selectedActual = selected?.actual_kg === null || !selected ? null : point(selected, selected.actual_kg);
+  const selectedExpected = selected?.expected_kg === null || !selected ? null : point(selected, selected.expected_kg);
+  const xTicks = observations.filter((row) => row.sequence === 1 || row.is_selected || row.sequence % 3 === 0);
 
   return (
     <figure className="trend-card">
+      <div className="trend-legend" aria-hidden="true">
+        <span className="trend-legend__item trend-legend__item--actual">Actual</span>
+        <span className="trend-legend__item trend-legend__item--expected">Expected</span>
+      </div>
       <svg
         className="trend-chart"
         role="img"
@@ -47,8 +54,13 @@ export function TrendChart({ observations }: TrendChartProps) {
         <desc id="trend-desc">
           Actual handgrip observations are shown against expected values from prior personal history when available.
         </desc>
-        <line x1={padding.left} x2={width - padding.right} y1={height - padding.bottom} y2={height - padding.bottom} />
-        <line x1={padding.left} x2={padding.left} y1={padding.top} y2={height - padding.bottom} />
+        <line
+          className="trend-chart__axis"
+          x1={padding.left}
+          x2={width - padding.right}
+          y1={height - padding.bottom}
+          y2={height - padding.bottom}
+        />
         {[min, Math.round((min + max) / 2), max].map((tick) => {
           const y = padding.top + (1 - (tick - min) / ySpan) * chartHeight;
           return (
@@ -60,8 +72,23 @@ export function TrendChart({ observations }: TrendChartProps) {
             </g>
           );
         })}
+        {xTicks.map((row) => {
+          const x = padding.left + ((row.sequence - 1) / xSpan) * chartWidth;
+          return (
+            <g key={row.sequence} className="trend-chart__x-tick">
+              <line x1={x} x2={x} y1={height - padding.bottom} y2={height - padding.bottom + 6} />
+              <text x={x} y={height - padding.bottom + 24}>
+                {row.sequence}
+              </text>
+            </g>
+          );
+        })}
         <path className="trend-chart__expected" d={pathFor(expectedPoints)} />
         <path className="trend-chart__actual" d={pathFor(actualPoints)} />
+        {expectedRows.map((row) => {
+          const coords = point(row, row.expected_kg as number);
+          return <circle key={`expected-${row.sequence}`} className="trend-chart__expected-dot" cx={coords.x} cy={coords.y} r="3" />;
+        })}
         {actualRows.map((row) => {
           const coords = point(row, row.actual_kg as number);
           return (
@@ -74,6 +101,23 @@ export function TrendChart({ observations }: TrendChartProps) {
             />
           );
         })}
+        {selectedActual && selectedExpected ? (
+          <line
+            className="trend-chart__selected-range"
+            x1={selectedActual.x}
+            x2={selectedExpected.x}
+            y1={selectedActual.y}
+            y2={selectedExpected.y}
+          />
+        ) : null}
+        {selectedActual ? (
+          <g className="trend-chart__selected-label">
+            <line x1={selectedActual.x} x2={selectedActual.x} y1={padding.top} y2={height - padding.bottom} />
+            <text x={Math.min(selectedActual.x + 12, width - 162)} y={padding.top + 18}>
+              Selected observation
+            </text>
+          </g>
+        ) : null}
         <text className="trend-chart__axis-label" x={width / 2} y={height - 8}>
           Observation
         </text>

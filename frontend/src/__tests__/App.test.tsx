@@ -40,14 +40,15 @@ describe("Fort product demo", () => {
 
     expect(screen.getByRole("heading", { name: "Context recorded for this study observation" })).toBeInTheDocument();
     expect(screen.getByText(/Timing relative to performance was not available/)).toBeInTheDocument();
-    expect(screen.getAllByText("Timing not verified").length).toBeGreaterThan(2);
+    expect(screen.getAllByText(/Timing not verified/).length).toBeGreaterThan(2);
     expect(renderedText()).toContain("Shown for reference, not used in the trusted prediction");
   });
 
   it("renders the model-card content", () => {
     render(<DemoExperience data={data} />);
 
-    expect(screen.getByRole("heading", { name: "Model and data limits" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Methodology and data disclosure" })).toBeInTheDocument();
+    expect(screen.getByText("Model and data limits")).toBeInTheDocument();
     expect(screen.getByText("Track A uses prior personal handgrip history only.")).toBeInTheDocument();
     expect(screen.getByText(/did not improve generalization/)).toBeInTheDocument();
     expect(screen.getByText("metadata insufficient")).toBeInTheDocument();
