@@ -1,0 +1,1352 @@
+{
+  "athlete_count": 15,
+  "computed_before_imputation": true,
+  "dataset_rows": 84,
+  "diagnostic_notes": [
+    "Sparse or uneven feature coverage may plausibly weaken Track B models.",
+    "Near-constant fields and timing-unverified fields are tracked as data-quality concerns.",
+    "No missing values are inferred from outcomes or future observations."
+  ],
+  "feature_group_coverage": [
+    {
+      "athletes_with_any_coverage_count": 15,
+      "athletes_with_no_coverage": [],
+      "athletes_with_no_coverage_count": 0,
+      "feature_count": 4,
+      "feature_group": "prior_history",
+      "rows_with_at_least_one_feature_present": 84,
+      "rows_with_complete_group_coverage": 84
+    },
+    {
+      "athletes_with_any_coverage_count": 14,
+      "athletes_with_no_coverage": [
+        "6a2ca03c-e61b-4589-a931-58f5e25aacd8"
+      ],
+      "athletes_with_no_coverage_count": 1,
+      "feature_count": 10,
+      "feature_group": "daily_sleep",
+      "rows_with_at_least_one_feature_present": 77,
+      "rows_with_complete_group_coverage": 77
+    },
+    {
+      "athletes_with_any_coverage_count": 15,
+      "athletes_with_no_coverage": [],
+      "athletes_with_no_coverage_count": 0,
+      "feature_count": 7,
+      "feature_group": "caffeine",
+      "rows_with_at_least_one_feature_present": 84,
+      "rows_with_complete_group_coverage": 0
+    },
+    {
+      "athletes_with_any_coverage_count": 15,
+      "athletes_with_no_coverage": [],
+      "athletes_with_no_coverage_count": 0,
+      "feature_count": 7,
+      "feature_group": "wellness",
+      "rows_with_at_least_one_feature_present": 84,
+      "rows_with_complete_group_coverage": 26
+    },
+    {
+      "athletes_with_any_coverage_count": 15,
+      "athletes_with_no_coverage": [],
+      "athletes_with_no_coverage_count": 0,
+      "feature_count": 4,
+      "feature_group": "match_context",
+      "rows_with_at_least_one_feature_present": 84,
+      "rows_with_complete_group_coverage": 72
+    },
+    {
+      "athletes_with_any_coverage_count": 15,
+      "athletes_with_no_coverage": [],
+      "athletes_with_no_coverage_count": 0,
+      "feature_count": 24,
+      "feature_group": "actigraphy",
+      "rows_with_at_least_one_feature_present": 84,
+      "rows_with_complete_group_coverage": 84
+    }
+  ],
+  "feature_missingness": [
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "prior_history",
+      "feature_name": "prior_valid_handgrip_count",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "prior_history",
+      "feature_name": "prior_expanding_handgrip_mean",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "prior_history",
+      "feature_name": "prior_expanding_handgrip_median",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "prior_history",
+      "feature_name": "prior_expanding_handgrip_std",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 14,
+      "athletes_with_no_coverage": 1,
+      "feature_group": "daily_sleep",
+      "feature_name": "objective_total_sleep_time",
+      "missing_count": 7,
+      "missing_percent": 8.33,
+      "near_constant": false,
+      "non_missing_count": 77
+    },
+    {
+      "athletes_with_any_coverage": 14,
+      "athletes_with_no_coverage": 1,
+      "feature_group": "daily_sleep",
+      "feature_name": "objective_sleep_intervals",
+      "missing_count": 7,
+      "missing_percent": 8.33,
+      "near_constant": false,
+      "non_missing_count": 77
+    },
+    {
+      "athletes_with_any_coverage": 14,
+      "athletes_with_no_coverage": 1,
+      "feature_group": "daily_sleep",
+      "feature_name": "objective_longest_interval_duration",
+      "missing_count": 7,
+      "missing_percent": 8.33,
+      "near_constant": false,
+      "non_missing_count": 77
+    },
+    {
+      "athletes_with_any_coverage": 14,
+      "athletes_with_no_coverage": 1,
+      "feature_group": "daily_sleep",
+      "feature_name": "objective_sleep_period_mean",
+      "missing_count": 7,
+      "missing_percent": 8.33,
+      "near_constant": false,
+      "non_missing_count": 77
+    },
+    {
+      "athletes_with_any_coverage": 14,
+      "athletes_with_no_coverage": 1,
+      "feature_group": "daily_sleep",
+      "feature_name": "objective_sleep_period_standard_deviation",
+      "missing_count": 7,
+      "missing_percent": 8.33,
+      "near_constant": false,
+      "non_missing_count": 77
+    },
+    {
+      "athletes_with_any_coverage": 14,
+      "athletes_with_no_coverage": 1,
+      "feature_group": "daily_sleep",
+      "feature_name": "objective_sleep_period_msd",
+      "missing_count": 7,
+      "missing_percent": 8.33,
+      "near_constant": false,
+      "non_missing_count": 77
+    },
+    {
+      "athletes_with_any_coverage": 14,
+      "athletes_with_no_coverage": 1,
+      "feature_group": "daily_sleep",
+      "feature_name": "sleep_onset_minutes_after_midnight",
+      "missing_count": 7,
+      "missing_percent": 8.33,
+      "near_constant": false,
+      "non_missing_count": 77
+    },
+    {
+      "athletes_with_any_coverage": 14,
+      "athletes_with_no_coverage": 1,
+      "feature_group": "daily_sleep",
+      "feature_name": "sleep_offset_minutes_after_midnight",
+      "missing_count": 7,
+      "missing_percent": 8.33,
+      "near_constant": false,
+      "non_missing_count": 77
+    },
+    {
+      "athletes_with_any_coverage": 14,
+      "athletes_with_no_coverage": 1,
+      "feature_group": "daily_sleep",
+      "feature_name": "longest_interval_start_minutes_after_midnight",
+      "missing_count": 7,
+      "missing_percent": 8.33,
+      "near_constant": false,
+      "non_missing_count": 77
+    },
+    {
+      "athletes_with_any_coverage": 14,
+      "athletes_with_no_coverage": 1,
+      "feature_group": "daily_sleep",
+      "feature_name": "longest_interval_end_minutes_after_midnight",
+      "missing_count": 7,
+      "missing_percent": 8.33,
+      "near_constant": false,
+      "non_missing_count": 77
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "caffeine",
+      "feature_name": "caffeine_mg",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 11,
+      "athletes_with_no_coverage": 4,
+      "feature_group": "caffeine",
+      "feature_name": "caffeine_time_category",
+      "missing_count": 36,
+      "missing_percent": 42.86,
+      "near_constant": false,
+      "non_missing_count": 48
+    },
+    {
+      "athletes_with_any_coverage": 7,
+      "athletes_with_no_coverage": 8,
+      "feature_group": "caffeine",
+      "feature_name": "coffee_count",
+      "missing_count": 57,
+      "missing_percent": 67.86,
+      "near_constant": false,
+      "non_missing_count": 27
+    },
+    {
+      "athletes_with_any_coverage": 4,
+      "athletes_with_no_coverage": 11,
+      "feature_group": "caffeine",
+      "feature_name": "cola_count",
+      "missing_count": 77,
+      "missing_percent": 91.67,
+      "near_constant": false,
+      "non_missing_count": 7
+    },
+    {
+      "athletes_with_any_coverage": 3,
+      "athletes_with_no_coverage": 12,
+      "feature_group": "caffeine",
+      "feature_name": "tea_count",
+      "missing_count": 81,
+      "missing_percent": 96.43,
+      "near_constant": true,
+      "non_missing_count": 3
+    },
+    {
+      "athletes_with_any_coverage": 5,
+      "athletes_with_no_coverage": 10,
+      "feature_group": "caffeine",
+      "feature_name": "espresso_count",
+      "missing_count": 68,
+      "missing_percent": 80.95,
+      "near_constant": false,
+      "non_missing_count": 16
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "caffeine",
+      "feature_name": "caffeine_present",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 11,
+      "athletes_with_no_coverage": 4,
+      "feature_group": "wellness",
+      "feature_name": "sleepquality",
+      "missing_count": 21,
+      "missing_percent": 25.0,
+      "near_constant": false,
+      "non_missing_count": 63
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "wellness",
+      "feature_name": "sleepdura_sr",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "wellness",
+      "feature_name": "readiness",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "wellness",
+      "feature_name": "fatigue",
+      "missing_count": 1,
+      "missing_percent": 1.19,
+      "near_constant": false,
+      "non_missing_count": 83
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "wellness",
+      "feature_name": "soreness",
+      "missing_count": 1,
+      "missing_percent": 1.19,
+      "near_constant": false,
+      "non_missing_count": 83
+    },
+    {
+      "athletes_with_any_coverage": 14,
+      "athletes_with_no_coverage": 1,
+      "feature_group": "wellness",
+      "feature_name": "soreness_location_1",
+      "missing_count": 16,
+      "missing_percent": 19.05,
+      "near_constant": false,
+      "non_missing_count": 68
+    },
+    {
+      "athletes_with_any_coverage": 12,
+      "athletes_with_no_coverage": 3,
+      "feature_group": "wellness",
+      "feature_name": "soreness_location_2",
+      "missing_count": 46,
+      "missing_percent": 54.76,
+      "near_constant": false,
+      "non_missing_count": 38
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "match_context",
+      "feature_name": "matchday_category",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "match_context",
+      "feature_name": "matchday_present",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": true,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "match_context",
+      "feature_name": "matchday_is_match_day",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 14,
+      "athletes_with_no_coverage": 1,
+      "feature_group": "match_context",
+      "feature_name": "matchday_relative_days",
+      "missing_count": 12,
+      "missing_percent": 14.29,
+      "near_constant": false,
+      "non_missing_count": 72
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_vm_mean",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_vm_median",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_vm_std",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_vm_max",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_vm_sum",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_x_mean",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_y_mean",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_z_mean",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_all_algorithm_nonwear_invalid_fraction",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_CK_sleep_fraction",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_CK_wake_fraction",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_CK_nonwear_fraction",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_Oakley_sleep_fraction",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_Oakley_wake_fraction",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_Oakley_nonwear_fraction",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_Sadeh_sleep_fraction",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_Sadeh_wake_fraction",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_Sadeh_nonwear_fraction",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_fourier_HMM_sleep_fraction",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_fourier_HMM_wake_fraction",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_fourier_HMM_nonwear_fraction",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_LSTM_sleep_fraction",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_LSTM_wake_fraction",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    },
+    {
+      "athletes_with_any_coverage": 15,
+      "athletes_with_no_coverage": 0,
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_LSTM_nonwear_fraction",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "near_constant": false,
+      "non_missing_count": 84
+    }
+  ],
+  "missingness_by_athlete": [
+    {
+      "athlete_id": "2068e7ec-51a8-441a-8053-2be7533e613f",
+      "feature_group": "prior_history",
+      "missing_cell_percent": 0.0,
+      "row_count": 5,
+      "rows_with_at_least_one_feature_present": 5,
+      "rows_with_complete_group_coverage": 5
+    },
+    {
+      "athlete_id": "687552ea-5963-45df-8680-c4c6058eab87",
+      "feature_group": "prior_history",
+      "missing_cell_percent": 0.0,
+      "row_count": 7,
+      "rows_with_at_least_one_feature_present": 7,
+      "rows_with_complete_group_coverage": 7
+    },
+    {
+      "athlete_id": "6a2ca03c-e61b-4589-a931-58f5e25aacd8",
+      "feature_group": "prior_history",
+      "missing_cell_percent": 0.0,
+      "row_count": 1,
+      "rows_with_at_least_one_feature_present": 1,
+      "rows_with_complete_group_coverage": 1
+    },
+    {
+      "athlete_id": "86fed448-f51d-4005-aef8-bd9413933cbe",
+      "feature_group": "prior_history",
+      "missing_cell_percent": 0.0,
+      "row_count": 8,
+      "rows_with_at_least_one_feature_present": 8,
+      "rows_with_complete_group_coverage": 8
+    },
+    {
+      "athlete_id": "8d47422f-2512-44a3-a6d6-8feb726f4759",
+      "feature_group": "prior_history",
+      "missing_cell_percent": 0.0,
+      "row_count": 4,
+      "rows_with_at_least_one_feature_present": 4,
+      "rows_with_complete_group_coverage": 4
+    },
+    {
+      "athlete_id": "957de0b1-7ee9-437c-b47b-dffd09b6653a",
+      "feature_group": "prior_history",
+      "missing_cell_percent": 0.0,
+      "row_count": 9,
+      "rows_with_at_least_one_feature_present": 9,
+      "rows_with_complete_group_coverage": 9
+    },
+    {
+      "athlete_id": "9cee6de4-93b3-46a7-a018-90f60d705ebb",
+      "feature_group": "prior_history",
+      "missing_cell_percent": 0.0,
+      "row_count": 6,
+      "rows_with_at_least_one_feature_present": 6,
+      "rows_with_complete_group_coverage": 6
+    },
+    {
+      "athlete_id": "a2d89dcf-6bd1-445b-bc9c-7ac6b852a9fc",
+      "feature_group": "prior_history",
+      "missing_cell_percent": 0.0,
+      "row_count": 6,
+      "rows_with_at_least_one_feature_present": 6,
+      "rows_with_complete_group_coverage": 6
+    },
+    {
+      "athlete_id": "c887cb7e-63cf-4dc2-9fd2-8429137ba44b",
+      "feature_group": "prior_history",
+      "missing_cell_percent": 0.0,
+      "row_count": 7,
+      "rows_with_at_least_one_feature_present": 7,
+      "rows_with_complete_group_coverage": 7
+    },
+    {
+      "athlete_id": "e362b878-9920-4dcf-9ab7-687a194a821c",
+      "feature_group": "prior_history",
+      "missing_cell_percent": 0.0,
+      "row_count": 7,
+      "rows_with_at_least_one_feature_present": 7,
+      "rows_with_complete_group_coverage": 7
+    },
+    {
+      "athlete_id": "e6e4e3b9-5cfa-42c6-a4cd-0f96561de3eb",
+      "feature_group": "prior_history",
+      "missing_cell_percent": 0.0,
+      "row_count": 6,
+      "rows_with_at_least_one_feature_present": 6,
+      "rows_with_complete_group_coverage": 6
+    },
+    {
+      "athlete_id": "ec3fc0a0-ab15-4c0c-b1ad-5243c6e5636f",
+      "feature_group": "prior_history",
+      "missing_cell_percent": 0.0,
+      "row_count": 6,
+      "rows_with_at_least_one_feature_present": 6,
+      "rows_with_complete_group_coverage": 6
+    },
+    {
+      "athlete_id": "efa2dbe6-24c0-4500-8b7b-1d5d14e1d271",
+      "feature_group": "prior_history",
+      "missing_cell_percent": 0.0,
+      "row_count": 3,
+      "rows_with_at_least_one_feature_present": 3,
+      "rows_with_complete_group_coverage": 3
+    },
+    {
+      "athlete_id": "f2b08928-a410-4d1d-9f19-1f8c063a6311",
+      "feature_group": "prior_history",
+      "missing_cell_percent": 0.0,
+      "row_count": 1,
+      "rows_with_at_least_one_feature_present": 1,
+      "rows_with_complete_group_coverage": 1
+    },
+    {
+      "athlete_id": "fd0c9e61-cb99-4d60-ab37-b4b3f5ac60d2",
+      "feature_group": "prior_history",
+      "missing_cell_percent": 0.0,
+      "row_count": 8,
+      "rows_with_at_least_one_feature_present": 8,
+      "rows_with_complete_group_coverage": 8
+    },
+    {
+      "athlete_id": "2068e7ec-51a8-441a-8053-2be7533e613f",
+      "feature_group": "daily_sleep",
+      "missing_cell_percent": 0.0,
+      "row_count": 5,
+      "rows_with_at_least_one_feature_present": 5,
+      "rows_with_complete_group_coverage": 5
+    },
+    {
+      "athlete_id": "687552ea-5963-45df-8680-c4c6058eab87",
+      "feature_group": "daily_sleep",
+      "missing_cell_percent": 14.29,
+      "row_count": 7,
+      "rows_with_at_least_one_feature_present": 6,
+      "rows_with_complete_group_coverage": 6
+    },
+    {
+      "athlete_id": "6a2ca03c-e61b-4589-a931-58f5e25aacd8",
+      "feature_group": "daily_sleep",
+      "missing_cell_percent": 100.0,
+      "row_count": 1,
+      "rows_with_at_least_one_feature_present": 0,
+      "rows_with_complete_group_coverage": 0
+    },
+    {
+      "athlete_id": "86fed448-f51d-4005-aef8-bd9413933cbe",
+      "feature_group": "daily_sleep",
+      "missing_cell_percent": 0.0,
+      "row_count": 8,
+      "rows_with_at_least_one_feature_present": 8,
+      "rows_with_complete_group_coverage": 8
+    },
+    {
+      "athlete_id": "8d47422f-2512-44a3-a6d6-8feb726f4759",
+      "feature_group": "daily_sleep",
+      "missing_cell_percent": 0.0,
+      "row_count": 4,
+      "rows_with_at_least_one_feature_present": 4,
+      "rows_with_complete_group_coverage": 4
+    },
+    {
+      "athlete_id": "957de0b1-7ee9-437c-b47b-dffd09b6653a",
+      "feature_group": "daily_sleep",
+      "missing_cell_percent": 0.0,
+      "row_count": 9,
+      "rows_with_at_least_one_feature_present": 9,
+      "rows_with_complete_group_coverage": 9
+    },
+    {
+      "athlete_id": "9cee6de4-93b3-46a7-a018-90f60d705ebb",
+      "feature_group": "daily_sleep",
+      "missing_cell_percent": 0.0,
+      "row_count": 6,
+      "rows_with_at_least_one_feature_present": 6,
+      "rows_with_complete_group_coverage": 6
+    },
+    {
+      "athlete_id": "a2d89dcf-6bd1-445b-bc9c-7ac6b852a9fc",
+      "feature_group": "daily_sleep",
+      "missing_cell_percent": 0.0,
+      "row_count": 6,
+      "rows_with_at_least_one_feature_present": 6,
+      "rows_with_complete_group_coverage": 6
+    },
+    {
+      "athlete_id": "c887cb7e-63cf-4dc2-9fd2-8429137ba44b",
+      "feature_group": "daily_sleep",
+      "missing_cell_percent": 0.0,
+      "row_count": 7,
+      "rows_with_at_least_one_feature_present": 7,
+      "rows_with_complete_group_coverage": 7
+    },
+    {
+      "athlete_id": "e362b878-9920-4dcf-9ab7-687a194a821c",
+      "feature_group": "daily_sleep",
+      "missing_cell_percent": 0.0,
+      "row_count": 7,
+      "rows_with_at_least_one_feature_present": 7,
+      "rows_with_complete_group_coverage": 7
+    },
+    {
+      "athlete_id": "e6e4e3b9-5cfa-42c6-a4cd-0f96561de3eb",
+      "feature_group": "daily_sleep",
+      "missing_cell_percent": 33.33,
+      "row_count": 6,
+      "rows_with_at_least_one_feature_present": 4,
+      "rows_with_complete_group_coverage": 4
+    },
+    {
+      "athlete_id": "ec3fc0a0-ab15-4c0c-b1ad-5243c6e5636f",
+      "feature_group": "daily_sleep",
+      "missing_cell_percent": 16.67,
+      "row_count": 6,
+      "rows_with_at_least_one_feature_present": 5,
+      "rows_with_complete_group_coverage": 5
+    },
+    {
+      "athlete_id": "efa2dbe6-24c0-4500-8b7b-1d5d14e1d271",
+      "feature_group": "daily_sleep",
+      "missing_cell_percent": 33.33,
+      "row_count": 3,
+      "rows_with_at_least_one_feature_present": 2,
+      "rows_with_complete_group_coverage": 2
+    },
+    {
+      "athlete_id": "f2b08928-a410-4d1d-9f19-1f8c063a6311",
+      "feature_group": "daily_sleep",
+      "missing_cell_percent": 0.0,
+      "row_count": 1,
+      "rows_with_at_least_one_feature_present": 1,
+      "rows_with_complete_group_coverage": 1
+    },
+    {
+      "athlete_id": "fd0c9e61-cb99-4d60-ab37-b4b3f5ac60d2",
+      "feature_group": "daily_sleep",
+      "missing_cell_percent": 12.5,
+      "row_count": 8,
+      "rows_with_at_least_one_feature_present": 7,
+      "rows_with_complete_group_coverage": 7
+    },
+    {
+      "athlete_id": "2068e7ec-51a8-441a-8053-2be7533e613f",
+      "feature_group": "caffeine",
+      "missing_cell_percent": 45.71,
+      "row_count": 5,
+      "rows_with_at_least_one_feature_present": 5,
+      "rows_with_complete_group_coverage": 0
+    },
+    {
+      "athlete_id": "687552ea-5963-45df-8680-c4c6058eab87",
+      "feature_group": "caffeine",
+      "missing_cell_percent": 67.35,
+      "row_count": 7,
+      "rows_with_at_least_one_feature_present": 7,
+      "rows_with_complete_group_coverage": 0
+    },
+    {
+      "athlete_id": "6a2ca03c-e61b-4589-a931-58f5e25aacd8",
+      "feature_group": "caffeine",
+      "missing_cell_percent": 71.43,
+      "row_count": 1,
+      "rows_with_at_least_one_feature_present": 1,
+      "rows_with_complete_group_coverage": 0
+    },
+    {
+      "athlete_id": "86fed448-f51d-4005-aef8-bd9413933cbe",
+      "feature_group": "caffeine",
+      "missing_cell_percent": 64.29,
+      "row_count": 8,
+      "rows_with_at_least_one_feature_present": 8,
+      "rows_with_complete_group_coverage": 0
+    },
+    {
+      "athlete_id": "8d47422f-2512-44a3-a6d6-8feb726f4759",
+      "feature_group": "caffeine",
+      "missing_cell_percent": 46.43,
+      "row_count": 4,
+      "rows_with_at_least_one_feature_present": 4,
+      "rows_with_complete_group_coverage": 0
+    },
+    {
+      "athlete_id": "957de0b1-7ee9-437c-b47b-dffd09b6653a",
+      "feature_group": "caffeine",
+      "missing_cell_percent": 47.62,
+      "row_count": 9,
+      "rows_with_at_least_one_feature_present": 9,
+      "rows_with_complete_group_coverage": 0
+    },
+    {
+      "athlete_id": "9cee6de4-93b3-46a7-a018-90f60d705ebb",
+      "feature_group": "caffeine",
+      "missing_cell_percent": 50.0,
+      "row_count": 6,
+      "rows_with_at_least_one_feature_present": 6,
+      "rows_with_complete_group_coverage": 0
+    },
+    {
+      "athlete_id": "a2d89dcf-6bd1-445b-bc9c-7ac6b852a9fc",
+      "feature_group": "caffeine",
+      "missing_cell_percent": 40.48,
+      "row_count": 6,
+      "rows_with_at_least_one_feature_present": 6,
+      "rows_with_complete_group_coverage": 0
+    },
+    {
+      "athlete_id": "c887cb7e-63cf-4dc2-9fd2-8429137ba44b",
+      "feature_group": "caffeine",
+      "missing_cell_percent": 59.18,
+      "row_count": 7,
+      "rows_with_at_least_one_feature_present": 7,
+      "rows_with_complete_group_coverage": 0
+    },
+    {
+      "athlete_id": "e362b878-9920-4dcf-9ab7-687a194a821c",
+      "feature_group": "caffeine",
+      "missing_cell_percent": 34.69,
+      "row_count": 7,
+      "rows_with_at_least_one_feature_present": 7,
+      "rows_with_complete_group_coverage": 0
+    },
+    {
+      "athlete_id": "e6e4e3b9-5cfa-42c6-a4cd-0f96561de3eb",
+      "feature_group": "caffeine",
+      "missing_cell_percent": 71.43,
+      "row_count": 6,
+      "rows_with_at_least_one_feature_present": 6,
+      "rows_with_complete_group_coverage": 0
+    },
+    {
+      "athlete_id": "ec3fc0a0-ab15-4c0c-b1ad-5243c6e5636f",
+      "feature_group": "caffeine",
+      "missing_cell_percent": 66.67,
+      "row_count": 6,
+      "rows_with_at_least_one_feature_present": 6,
+      "rows_with_complete_group_coverage": 0
+    },
+    {
+      "athlete_id": "efa2dbe6-24c0-4500-8b7b-1d5d14e1d271",
+      "feature_group": "caffeine",
+      "missing_cell_percent": 71.43,
+      "row_count": 3,
+      "rows_with_at_least_one_feature_present": 3,
+      "rows_with_complete_group_coverage": 0
+    },
+    {
+      "athlete_id": "f2b08928-a410-4d1d-9f19-1f8c063a6311",
+      "feature_group": "caffeine",
+      "missing_cell_percent": 71.43,
+      "row_count": 1,
+      "rows_with_at_least_one_feature_present": 1,
+      "rows_with_complete_group_coverage": 0
+    },
+    {
+      "athlete_id": "fd0c9e61-cb99-4d60-ab37-b4b3f5ac60d2",
+      "feature_group": "caffeine",
+      "missing_cell_percent": 42.86,
+      "row_count": 8,
+      "rows_with_at_least_one_feature_present": 8,
+      "rows_with_complete_group_coverage": 0
+    },
+    {
+      "athlete_id": "2068e7ec-51a8-441a-8053-2be7533e613f",
+      "feature_group": "wellness",
+      "missing_cell_percent": 17.14,
+      "row_count": 5,
+      "rows_with_at_least_one_feature_present": 5,
+      "rows_with_complete_group_coverage": 1
+    },
+    {
+      "athlete_id": "687552ea-5963-45df-8680-c4c6058eab87",
+      "feature_group": "wellness",
+      "missing_cell_percent": 4.08,
+      "row_count": 7,
+      "rows_with_at_least_one_feature_present": 7,
+      "rows_with_complete_group_coverage": 5
+    },
+    {
+      "athlete_id": "6a2ca03c-e61b-4589-a931-58f5e25aacd8",
+      "feature_group": "wellness",
+      "missing_cell_percent": 14.29,
+      "row_count": 1,
+      "rows_with_at_least_one_feature_present": 1,
+      "rows_with_complete_group_coverage": 0
+    },
+    {
+      "athlete_id": "86fed448-f51d-4005-aef8-bd9413933cbe",
+      "feature_group": "wellness",
+      "missing_cell_percent": 0.0,
+      "row_count": 8,
+      "rows_with_at_least_one_feature_present": 8,
+      "rows_with_complete_group_coverage": 8
+    },
+    {
+      "athlete_id": "8d47422f-2512-44a3-a6d6-8feb726f4759",
+      "feature_group": "wellness",
+      "missing_cell_percent": 32.14,
+      "row_count": 4,
+      "rows_with_at_least_one_feature_present": 4,
+      "rows_with_complete_group_coverage": 0
+    },
+    {
+      "athlete_id": "957de0b1-7ee9-437c-b47b-dffd09b6653a",
+      "feature_group": "wellness",
+      "missing_cell_percent": 28.57,
+      "row_count": 9,
+      "rows_with_at_least_one_feature_present": 9,
+      "rows_with_complete_group_coverage": 0
+    },
+    {
+      "athlete_id": "9cee6de4-93b3-46a7-a018-90f60d705ebb",
+      "feature_group": "wellness",
+      "missing_cell_percent": 16.67,
+      "row_count": 6,
+      "rows_with_at_least_one_feature_present": 6,
+      "rows_with_complete_group_coverage": 0
+    },
+    {
+      "athlete_id": "a2d89dcf-6bd1-445b-bc9c-7ac6b852a9fc",
+      "feature_group": "wellness",
+      "missing_cell_percent": 9.52,
+      "row_count": 6,
+      "rows_with_at_least_one_feature_present": 6,
+      "rows_with_complete_group_coverage": 2
+    },
+    {
+      "athlete_id": "c887cb7e-63cf-4dc2-9fd2-8429137ba44b",
+      "feature_group": "wellness",
+      "missing_cell_percent": 6.12,
+      "row_count": 7,
+      "rows_with_at_least_one_feature_present": 7,
+      "rows_with_complete_group_coverage": 4
+    },
+    {
+      "athlete_id": "e362b878-9920-4dcf-9ab7-687a194a821c",
+      "feature_group": "wellness",
+      "missing_cell_percent": 12.24,
+      "row_count": 7,
+      "rows_with_at_least_one_feature_present": 7,
+      "rows_with_complete_group_coverage": 3
+    },
+    {
+      "athlete_id": "e6e4e3b9-5cfa-42c6-a4cd-0f96561de3eb",
+      "feature_group": "wellness",
+      "missing_cell_percent": 23.81,
+      "row_count": 6,
+      "rows_with_at_least_one_feature_present": 6,
+      "rows_with_complete_group_coverage": 0
+    },
+    {
+      "athlete_id": "ec3fc0a0-ab15-4c0c-b1ad-5243c6e5636f",
+      "feature_group": "wellness",
+      "missing_cell_percent": 9.52,
+      "row_count": 6,
+      "rows_with_at_least_one_feature_present": 6,
+      "rows_with_complete_group_coverage": 2
+    },
+    {
+      "athlete_id": "efa2dbe6-24c0-4500-8b7b-1d5d14e1d271",
+      "feature_group": "wellness",
+      "missing_cell_percent": 28.57,
+      "row_count": 3,
+      "rows_with_at_least_one_feature_present": 3,
+      "rows_with_complete_group_coverage": 0
+    },
+    {
+      "athlete_id": "f2b08928-a410-4d1d-9f19-1f8c063a6311",
+      "feature_group": "wellness",
+      "missing_cell_percent": 14.29,
+      "row_count": 1,
+      "rows_with_at_least_one_feature_present": 1,
+      "rows_with_complete_group_coverage": 0
+    },
+    {
+      "athlete_id": "fd0c9e61-cb99-4d60-ab37-b4b3f5ac60d2",
+      "feature_group": "wellness",
+      "missing_cell_percent": 14.29,
+      "row_count": 8,
+      "rows_with_at_least_one_feature_present": 8,
+      "rows_with_complete_group_coverage": 1
+    },
+    {
+      "athlete_id": "2068e7ec-51a8-441a-8053-2be7533e613f",
+      "feature_group": "match_context",
+      "missing_cell_percent": 5.0,
+      "row_count": 5,
+      "rows_with_at_least_one_feature_present": 5,
+      "rows_with_complete_group_coverage": 4
+    },
+    {
+      "athlete_id": "687552ea-5963-45df-8680-c4c6058eab87",
+      "feature_group": "match_context",
+      "missing_cell_percent": 3.57,
+      "row_count": 7,
+      "rows_with_at_least_one_feature_present": 7,
+      "rows_with_complete_group_coverage": 6
+    },
+    {
+      "athlete_id": "6a2ca03c-e61b-4589-a931-58f5e25aacd8",
+      "feature_group": "match_context",
+      "missing_cell_percent": 25.0,
+      "row_count": 1,
+      "rows_with_at_least_one_feature_present": 1,
+      "rows_with_complete_group_coverage": 0
+    },
+    {
+      "athlete_id": "86fed448-f51d-4005-aef8-bd9413933cbe",
+      "feature_group": "match_context",
+      "missing_cell_percent": 3.12,
+      "row_count": 8,
+      "rows_with_at_least_one_feature_present": 8,
+      "rows_with_complete_group_coverage": 7
+    },
+    {
+      "athlete_id": "8d47422f-2512-44a3-a6d6-8feb726f4759",
+      "feature_group": "match_context",
+      "missing_cell_percent": 6.25,
+      "row_count": 4,
+      "rows_with_at_least_one_feature_present": 4,
+      "rows_with_complete_group_coverage": 3
+    },
+    {
+      "athlete_id": "957de0b1-7ee9-437c-b47b-dffd09b6653a",
+      "feature_group": "match_context",
+      "missing_cell_percent": 2.78,
+      "row_count": 9,
+      "rows_with_at_least_one_feature_present": 9,
+      "rows_with_complete_group_coverage": 8
+    },
+    {
+      "athlete_id": "9cee6de4-93b3-46a7-a018-90f60d705ebb",
+      "feature_group": "match_context",
+      "missing_cell_percent": 4.17,
+      "row_count": 6,
+      "rows_with_at_least_one_feature_present": 6,
+      "rows_with_complete_group_coverage": 5
+    },
+    {
+      "athlete_id": "a2d89dcf-6bd1-445b-bc9c-7ac6b852a9fc",
+      "feature_group": "match_context",
+      "missing_cell_percent": 4.17,
+      "row_count": 6,
+      "rows_with_at_least_one_feature_present": 6,
+      "rows_with_complete_group_coverage": 5
+    },
+    {
+      "athlete_id": "c887cb7e-63cf-4dc2-9fd2-8429137ba44b",
+      "feature_group": "match_context",
+      "missing_cell_percent": 3.57,
+      "row_count": 7,
+      "rows_with_at_least_one_feature_present": 7,
+      "rows_with_complete_group_coverage": 6
+    },
+    {
+      "athlete_id": "e362b878-9920-4dcf-9ab7-687a194a821c",
+      "feature_group": "match_context",
+      "missing_cell_percent": 3.57,
+      "row_count": 7,
+      "rows_with_at_least_one_feature_present": 7,
+      "rows_with_complete_group_coverage": 6
+    },
+    {
+      "athlete_id": "e6e4e3b9-5cfa-42c6-a4cd-0f96561de3eb",
+      "feature_group": "match_context",
+      "missing_cell_percent": 4.17,
+      "row_count": 6,
+      "rows_with_at_least_one_feature_present": 6,
+      "rows_with_complete_group_coverage": 5
+    },
+    {
+      "athlete_id": "ec3fc0a0-ab15-4c0c-b1ad-5243c6e5636f",
+      "feature_group": "match_context",
+      "missing_cell_percent": 0.0,
+      "row_count": 6,
+      "rows_with_at_least_one_feature_present": 6,
+      "rows_with_complete_group_coverage": 6
+    },
+    {
+      "athlete_id": "efa2dbe6-24c0-4500-8b7b-1d5d14e1d271",
+      "feature_group": "match_context",
+      "missing_cell_percent": 0.0,
+      "row_count": 3,
+      "rows_with_at_least_one_feature_present": 3,
+      "rows_with_complete_group_coverage": 3
+    },
+    {
+      "athlete_id": "f2b08928-a410-4d1d-9f19-1f8c063a6311",
+      "feature_group": "match_context",
+      "missing_cell_percent": 0.0,
+      "row_count": 1,
+      "rows_with_at_least_one_feature_present": 1,
+      "rows_with_complete_group_coverage": 1
+    },
+    {
+      "athlete_id": "fd0c9e61-cb99-4d60-ab37-b4b3f5ac60d2",
+      "feature_group": "match_context",
+      "missing_cell_percent": 3.12,
+      "row_count": 8,
+      "rows_with_at_least_one_feature_present": 8,
+      "rows_with_complete_group_coverage": 7
+    },
+    {
+      "athlete_id": "2068e7ec-51a8-441a-8053-2be7533e613f",
+      "feature_group": "actigraphy",
+      "missing_cell_percent": 0.0,
+      "row_count": 5,
+      "rows_with_at_least_one_feature_present": 5,
+      "rows_with_complete_group_coverage": 5
+    },
+    {
+      "athlete_id": "687552ea-5963-45df-8680-c4c6058eab87",
+      "feature_group": "actigraphy",
+      "missing_cell_percent": 0.0,
+      "row_count": 7,
+      "rows_with_at_least_one_feature_present": 7,
+      "rows_with_complete_group_coverage": 7
+    },
+    {
+      "athlete_id": "6a2ca03c-e61b-4589-a931-58f5e25aacd8",
+      "feature_group": "actigraphy",
+      "missing_cell_percent": 0.0,
+      "row_count": 1,
+      "rows_with_at_least_one_feature_present": 1,
+      "rows_with_complete_group_coverage": 1
+    },
+    {
+      "athlete_id": "86fed448-f51d-4005-aef8-bd9413933cbe",
+      "feature_group": "actigraphy",
+      "missing_cell_percent": 0.0,
+      "row_count": 8,
+      "rows_with_at_least_one_feature_present": 8,
+      "rows_with_complete_group_coverage": 8
+    },
+    {
+      "athlete_id": "8d47422f-2512-44a3-a6d6-8feb726f4759",
+      "feature_group": "actigraphy",
+      "missing_cell_percent": 0.0,
+      "row_count": 4,
+      "rows_with_at_least_one_feature_present": 4,
+      "rows_with_complete_group_coverage": 4
+    },
+    {
+      "athlete_id": "957de0b1-7ee9-437c-b47b-dffd09b6653a",
+      "feature_group": "actigraphy",
+      "missing_cell_percent": 0.0,
+      "row_count": 9,
+      "rows_with_at_least_one_feature_present": 9,
+      "rows_with_complete_group_coverage": 9
+    },
+    {
+      "athlete_id": "9cee6de4-93b3-46a7-a018-90f60d705ebb",
+      "feature_group": "actigraphy",
+      "missing_cell_percent": 0.0,
+      "row_count": 6,
+      "rows_with_at_least_one_feature_present": 6,
+      "rows_with_complete_group_coverage": 6
+    },
+    {
+      "athlete_id": "a2d89dcf-6bd1-445b-bc9c-7ac6b852a9fc",
+      "feature_group": "actigraphy",
+      "missing_cell_percent": 0.0,
+      "row_count": 6,
+      "rows_with_at_least_one_feature_present": 6,
+      "rows_with_complete_group_coverage": 6
+    },
+    {
+      "athlete_id": "c887cb7e-63cf-4dc2-9fd2-8429137ba44b",
+      "feature_group": "actigraphy",
+      "missing_cell_percent": 0.0,
+      "row_count": 7,
+      "rows_with_at_least_one_feature_present": 7,
+      "rows_with_complete_group_coverage": 7
+    },
+    {
+      "athlete_id": "e362b878-9920-4dcf-9ab7-687a194a821c",
+      "feature_group": "actigraphy",
+      "missing_cell_percent": 0.0,
+      "row_count": 7,
+      "rows_with_at_least_one_feature_present": 7,
+      "rows_with_complete_group_coverage": 7
+    },
+    {
+      "athlete_id": "e6e4e3b9-5cfa-42c6-a4cd-0f96561de3eb",
+      "feature_group": "actigraphy",
+      "missing_cell_percent": 0.0,
+      "row_count": 6,
+      "rows_with_at_least_one_feature_present": 6,
+      "rows_with_complete_group_coverage": 6
+    },
+    {
+      "athlete_id": "ec3fc0a0-ab15-4c0c-b1ad-5243c6e5636f",
+      "feature_group": "actigraphy",
+      "missing_cell_percent": 0.0,
+      "row_count": 6,
+      "rows_with_at_least_one_feature_present": 6,
+      "rows_with_complete_group_coverage": 6
+    },
+    {
+      "athlete_id": "efa2dbe6-24c0-4500-8b7b-1d5d14e1d271",
+      "feature_group": "actigraphy",
+      "missing_cell_percent": 0.0,
+      "row_count": 3,
+      "rows_with_at_least_one_feature_present": 3,
+      "rows_with_complete_group_coverage": 3
+    },
+    {
+      "athlete_id": "f2b08928-a410-4d1d-9f19-1f8c063a6311",
+      "feature_group": "actigraphy",
+      "missing_cell_percent": 0.0,
+      "row_count": 1,
+      "rows_with_at_least_one_feature_present": 1,
+      "rows_with_complete_group_coverage": 1
+    },
+    {
+      "athlete_id": "fd0c9e61-cb99-4d60-ab37-b4b3f5ac60d2",
+      "feature_group": "actigraphy",
+      "missing_cell_percent": 0.0,
+      "row_count": 8,
+      "rows_with_at_least_one_feature_present": 8,
+      "rows_with_complete_group_coverage": 8
+    }
+  ]
+}

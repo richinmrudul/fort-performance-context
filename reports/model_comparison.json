@@ -1,53 +1,62 @@
 {
-  "comparison_scope": "Track B exploratory models compared with Track A prior-only baselines",
-  "caution": "Track B features are timing-unverified and actigraphy alignment is weekday-only; improvements do not prove causality or deployable pre-workout prediction.",
-  "row_order_policy": "source_row_order_only_no_random_splits",
+  "baseline_identity": "Track A prior_expanding_mean on the exact same prediction rows",
+  "caution": "Track B features are timing-unverified and actigraphy alignment is weekday-only; results do not prove causality or deployable pre-workout prediction.",
+  "comparison_scope": "Hardened Track B sklearn models compared with Track A prior-only baseline",
   "comparisons": {
-    "leave_one_athlete_out": {
-      "track_a_prior_mean_baseline": {
-        "model_name": "prior_expanding_mean",
-        "feature_set": "track_a",
-        "sample_count": 84,
-        "athlete_count": 15,
-        "mae_kg": 1.6253681371538509,
-        "rmse_kg": 2.365245404276941,
-        "mae_pct_prior_median_baseline": 4.744986960688853
-      },
-      "best_track_b_contextual_model": {
-        "model_name": "ridge_numpy_fallback",
-        "feature_set": "prior_history_plus_match_context",
-        "sample_count": 84,
-        "athlete_count": 15,
-        "fold_count": 15,
-        "mae_kg": 1.6898218624150083,
-        "rmse_kg": 2.2633736146799506,
-        "mae_pct_prior_median_baseline": 4.967743883735594
-      },
-      "delta_mae_kg_vs_track_a_prior_mean": 0.06445372526115745,
-      "improved_over_track_a_prior_mean": false
-    },
     "chronological_holdout": {
-      "track_a_prior_mean_baseline": {
-        "model_name": "prior_expanding_mean",
-        "feature_set": "track_a",
-        "sample_count": 33,
-        "athlete_count": 15,
-        "mae_kg": 1.4555125934671387,
-        "rmse_kg": 1.9728026401451937,
-        "mae_pct_prior_median_baseline": 4.326773134845844
-      },
       "best_track_b_contextual_model": {
-        "model_name": "ridge_numpy_fallback",
-        "feature_set": "prior_history_plus_caffeine",
-        "sample_count": 33,
         "athlete_count": 15,
+        "delta_definition": "Track B MAE - Track A MAE; negative means Track B improved",
+        "estimator": "sklearn_ridge",
+        "feature_set": "prior_history_plus_caffeine",
         "fold_count": 1,
-        "mae_kg": 1.8067214135538154,
-        "rmse_kg": 2.2597478296961904,
-        "mae_pct_prior_median_baseline": 5.384510685512869
+        "mae_delta_vs_track_a_prior_mean_kg": 0.3871338476526762,
+        "mae_kg": 1.842646441119815,
+        "mae_pct_prior_median_baseline": 5.445980142456957,
+        "rmse_kg": 2.276262528828364,
+        "sample_count": 33,
+        "track_a_prior_mean_mae_kg": 1.4555125934671387
       },
-      "delta_mae_kg_vs_track_a_prior_mean": 0.35120882008667675,
-      "improved_over_track_a_prior_mean": false
+      "delta_definition": "Track B MAE - Track A MAE; negative means Track B improved",
+      "delta_mae_kg_vs_track_a_prior_mean": 0.3871338476526762,
+      "improved_over_track_a_prior_mean": false,
+      "track_a_prior_mean_baseline": {
+        "athlete_count": 15,
+        "feature_set": "track_a",
+        "mae_kg": 1.4555125934671387,
+        "mae_pct_prior_median_baseline": 4.326773134845844,
+        "model_name": "prior_expanding_mean",
+        "rmse_kg": 1.9728026401451937,
+        "sample_count": 33
+      }
+    },
+    "leave_one_athlete_out": {
+      "best_track_b_contextual_model": {
+        "athlete_count": 15,
+        "delta_definition": "Track B MAE - Track A MAE; negative means Track B improved",
+        "estimator": "sklearn_ridge",
+        "feature_set": "prior_history_plus_match_context",
+        "fold_count": 15,
+        "mae_delta_vs_track_a_prior_mean_kg": 0.15495642259898879,
+        "mae_kg": 1.7803245597528397,
+        "mae_pct_prior_median_baseline": 5.192459974064614,
+        "rmse_kg": 2.3162911916968976,
+        "sample_count": 84,
+        "track_a_prior_mean_mae_kg": 1.6253681371538509
+      },
+      "delta_definition": "Track B MAE - Track A MAE; negative means Track B improved",
+      "delta_mae_kg_vs_track_a_prior_mean": 0.15495642259898879,
+      "improved_over_track_a_prior_mean": false,
+      "track_a_prior_mean_baseline": {
+        "athlete_count": 15,
+        "feature_set": "track_a",
+        "mae_kg": 1.6253681371538509,
+        "mae_pct_prior_median_baseline": 4.744986960688853,
+        "model_name": "prior_expanding_mean",
+        "rmse_kg": 2.365245404276941,
+        "sample_count": 84
+      }
     }
-  }
+  },
+  "row_order_policy": "source_row_order_only_no_random_splits"
 }

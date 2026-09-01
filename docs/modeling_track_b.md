@@ -1,12 +1,31 @@
-# Track B Exploratory Modeling
+# Track B Hardened Exploratory Modeling
 
 Updated: 2026-08-31
 
-Track B evaluates whether exploratory recovery, recent activity, caffeine,
-wellness, and match-context features improve handgrip prediction beyond the
-Track A prior-only baselines. These results are timing-unverified product
-research. They do not prove causality and do not yet prove pre-workout
-deployability.
+Track B evaluates whether timing-unverified contextual features add predictive
+value beyond Track A personal handgrip history. This is an evaluation-hardening
+result, not a search for a positive finding. Track B remains exploratory because
+daily response timing and actigraphy alignment are not verified as pre-handgrip.
+
+## Environment
+
+Generation command:
+
+```bash
+python3 -m src.models.evaluate_track_b
+```
+
+Recorded dependency versions:
+
+| Dependency | Version |
+| --- | --- |
+| Python | 3.9.6 |
+| NumPy | 2.0.2 |
+| pandas | 2.3.2 |
+| scikit-learn | 1.5.2 |
+
+The official hardened evaluator requires scikit-learn. It does not silently
+write official reports with the older NumPy fallback.
 
 ## Dataset And Splits
 
@@ -19,134 +38,201 @@ Targets:
 - `handgrip_kg`
 - `target_pct_prior_median_baseline`
 
-Evaluation follows Track A:
+Evaluation schemes:
 
-- No random row split.
-- Leave-one-athlete-out across 15 athletes.
-- Chronological holdout using the last 30 percent of eligible rows per athlete,
-  minimum one row, under the source-row-order temporal assumption.
+- Leave-one-athlete-out: 15 folds, 84 evaluated rows.
+- Chronological holdout: last 30 percent per athlete, minimum one row, 33
+  evaluated rows.
 
-Forbidden columns are excluded from model inputs, including observation IDs,
-athlete IDs, row indices, target fields, retrospective descriptive baselines,
-free-text comments, leakage labels, manifest/status labels, and actigraphy
-join/status metadata.
+No random row split is used.
 
-## Feature Sets
+## Leakage Controls
 
-The evaluator tests these ablations:
+The evaluator excludes IDs, row-order fields, targets, retrospective descriptive
+baselines, free-text comments, leakage/status labels, split labels, output
+columns, and actigraphy join/status metadata from model inputs.
 
-| Feature set | Contents |
-| --- | --- |
-| `prior_history_only` | Track A prior handgrip history fields |
-| `prior_history_plus_daily_sleep` | Prior history plus objective sleep summaries and sleep timing |
-| `prior_history_plus_caffeine` | Prior history plus caffeine amount, timing category, drink counts, and caffeine-present flag |
-| `prior_history_plus_wellness` | Prior history plus subjective sleep, readiness, fatigue, and soreness fields |
-| `prior_history_plus_match_context` | Prior history plus conservatively encoded match context |
-| `prior_history_plus_actigraphy` | Prior history plus provisional weekday-only actigraphy activity and sleep/wake fractions |
-| `all_track_b_exploratory` | All allowed Track B exploratory modeling features |
+Preprocessing is fold-local through scikit-learn `Pipeline` and
+`ColumnTransformer`:
 
-Numeric missing values are imputed from training-fold medians only.
-Categorical missing values are imputed with an explicit `__MISSING__` category.
-Categorical levels are learned inside each training fold.
+- numeric imputation uses training-fold medians only;
+- scaling is fit on training rows only;
+- categorical missing values become `__MISSING__`;
+- one-hot vocabularies are learned from training rows only;
+- unseen test categories are ignored without refitting;
+- model fitting uses only training rows.
 
-## Models
+Regression tests cover held-out athlete isolation, chronological no-future-row
+isolation, paired Track A/Track B row alignment, forbidden-column failures, and
+fold-local preprocessing.
 
-Always evaluated:
+Detailed machine-readable audit:
 
-- `prior_expanding_median`
-- `prior_expanding_mean`
+- `reports/track_b_feature_audit.json`
 
-In this environment, `sklearn` is not installed. The evaluator therefore used a
-transparent fallback model:
+## Feature Sets And Estimators
 
-- `ridge_numpy_fallback`, a low-complexity ridge regression implemented with
-  NumPy and `alpha = 10.0`
+Feature sets:
 
-If `sklearn` is installed in a future environment, the evaluator can also run:
+- `prior_history_only`
+- `prior_history_plus_daily_sleep`
+- `prior_history_plus_caffeine`
+- `prior_history_plus_wellness`
+- `prior_history_plus_match_context`
+- `prior_history_plus_actigraphy`
+- `all_track_b_exploratory`
 
-- `ridge_regularized_linear`
-- `random_forest_small` with conservative depth and leaf-size settings
+Estimators:
 
-## Results
+- `sklearn_ridge`: `sklearn.linear_model.Ridge(alpha=10.0)`
+- `sklearn_random_forest`:
+  `RandomForestRegressor(n_estimators=100, max_depth=3, min_samples_leaf=5,
+  random_state=20260831)`
 
-Track A baseline comparison:
+Track A `prior_expanding_mean` is the benchmark. Deltas are always:
 
-| Split | Model | MAE kg | RMSE kg | MAE % baseline | n | Folds |
-| --- | --- | ---: | ---: | ---: | ---: | ---: |
-| Leave-one-athlete-out | Track A `prior_expanding_mean` | 1.625 | 2.365 | 4.745 | 84 | 15 |
-| Leave-one-athlete-out | Track A `prior_expanding_median` | 1.702 | 2.483 | 4.963 | 84 | 15 |
-| Chronological holdout | Track A `prior_expanding_mean` | 1.456 | 1.973 | 4.327 | 33 | 1 |
-| Chronological holdout | Track A `prior_expanding_median` | 1.624 | 2.234 | 4.774 | 33 | 1 |
+`Track B MAE - Track A MAE`
 
-Best contextual Track B fallback models:
+Negative means Track B improved; positive means Track B was worse.
 
-| Split | Feature set | MAE kg | RMSE kg | MAE % baseline | Delta MAE vs Track A prior mean |
-| --- | --- | ---: | ---: | ---: | ---: |
-| Leave-one-athlete-out | `prior_history_plus_match_context` | 1.690 | 2.263 | 4.968 | +0.064 |
-| Chronological holdout | `prior_history_plus_caffeine` | 1.807 | 2.260 | 5.385 | +0.351 |
+## Main Results
 
-Full fallback ridge ablation ranking:
+Best contextual sklearn model in each scheme:
 
-| Split | Feature set | MAE kg | RMSE kg | MAE % baseline |
-| --- | --- | ---: | ---: | ---: |
-| Leave-one-athlete-out | `prior_history_plus_match_context` | 1.690 | 2.263 | 4.968 |
-| Leave-one-athlete-out | `prior_history_only` | 1.751 | 2.322 | 5.134 |
-| Leave-one-athlete-out | `prior_history_plus_wellness` | 1.784 | 2.377 | 5.330 |
-| Leave-one-athlete-out | `prior_history_plus_caffeine` | 1.792 | 2.366 | 5.294 |
-| Leave-one-athlete-out | `prior_history_plus_actigraphy` | 1.831 | 2.399 | 5.418 |
-| Leave-one-athlete-out | `prior_history_plus_daily_sleep` | 2.068 | 2.691 | 6.192 |
-| Leave-one-athlete-out | `all_track_b_exploratory` | 2.387 | 3.221 | 7.242 |
-| Chronological holdout | `prior_history_plus_caffeine` | 1.807 | 2.260 | 5.385 |
-| Chronological holdout | `prior_history_only` | 1.832 | 2.266 | 5.510 |
-| Chronological holdout | `prior_history_plus_match_context` | 1.986 | 2.365 | 6.118 |
-| Chronological holdout | `prior_history_plus_daily_sleep` | 2.015 | 2.528 | 6.157 |
-| Chronological holdout | `prior_history_plus_wellness` | 2.042 | 2.497 | 6.251 |
-| Chronological holdout | `prior_history_plus_actigraphy` | 2.162 | 2.544 | 6.693 |
-| Chronological holdout | `all_track_b_exploratory` | 2.316 | 2.836 | 7.186 |
+| Scheme | Estimator | Feature set | Track A MAE | Track B MAE | Delta MAE |
+| --- | --- | --- | ---: | ---: | ---: |
+| Leave-one-athlete-out | Ridge | `prior_history_plus_match_context` | 1.625 | 1.780 | +0.155 |
+| Chronological holdout | Ridge | `prior_history_plus_caffeine` | 1.456 | 1.843 | +0.387 |
 
-## Interpretation
+Random Forest did not improve on Track A:
 
-No Track B contextual feature group improved MAE over the Track A
-`prior_expanding_mean` baseline in either evaluation split.
+| Scheme | Best RF feature set | Track B MAE | Delta MAE |
+| --- | --- | ---: | ---: |
+| Leave-one-athlete-out | `prior_history_only` | 2.194 | +0.569 |
+| Chronological holdout | `prior_history_only` | 1.854 | +0.398 |
 
-The most useful model-supported contextual signal in this run is weak and
-split-dependent:
+Every sklearn Ridge and Random Forest feature-set comparison had a positive
+MAE delta versus Track A `prior_expanding_mean`.
 
-- Match context is the best contextual ablation in leave-one-athlete-out, but
-  its MAE is still 0.064 kg worse than Track A prior mean.
-- Caffeine is the best contextual ablation in chronological holdout, but its
-  MAE is still 0.351 kg worse than Track A prior mean.
+## Bootstrap Uncertainty
 
-Daily sleep, actigraphy, wellness, and the full exploratory feature set do not
-show reliable improvement in this small fallback-model evaluation. The all-in
-feature set performs worst in both splits, which is consistent with too many
-timing-unverified and partly sparse features for 84 rows.
+Bootstrap method:
+
+- compute out-of-fold predictions first;
+- resample athletes as clusters with replacement;
+- retain all evaluated rows for each sampled athlete;
+- compute Track A MAE, Track B MAE, and paired MAE delta on the same resampled
+  observations;
+- fixed seed: 20260831;
+- iterations: 2,000;
+- confidence level: 95 percent.
+
+Representative intervals for the best contextual models:
+
+| Scheme | Estimator / feature set | Track A MAE CI | Track B MAE CI | Paired delta CI |
+| --- | --- | --- | --- | --- |
+| Leave-one-athlete-out | Ridge `prior_history_plus_match_context` | 1.269 to 2.030 | 1.450 to 2.163 | -0.064 to +0.391 |
+| Chronological holdout | Ridge `prior_history_plus_caffeine` | 1.029 to 1.854 | 1.407 to 2.235 | +0.074 to +0.781 |
+
+These are descriptive uncertainty estimates conditional on the observed
+athletes, feature construction, evaluation design, and fixed out-of-fold
+predictions. They do not represent causal effects and do not capture every
+source of model-training uncertainty because models are not refit inside each
+bootstrap replicate.
+
+Detailed report:
+
+- `reports/track_b_bootstrap.json`
+
+## Per-Athlete Findings
+
+Per-athlete results are split into:
+
+- `minimally_interpretable`: at least 3 evaluated rows;
+- `anecdotal_too_few_rows`: fewer than 3 evaluated rows.
+
+Some athletes show repeated descriptive improvement under both schemes for
+specific estimator/feature-set combinations, but those cases are isolated. They
+do not reverse the cohort-level result and are often estimator- or feature-set
+specific. The repeated minimally interpretable improvements are concentrated in
+two athlete IDs already present in processed modeling output:
+
+- `687552ea-5963-45df-8680-c4c6058eab87`
+- `e362b878-9920-4dcf-9ab7-687a194a821c`
+
+These should not be described as stable individual benefit. They are descriptive
+error-pattern observations in a small, timing-unverified dataset.
+
+Detailed report:
+
+- `reports/track_b_per_athlete.csv`
+
+## Stability
+
+The stability summary checks each feature set by estimator and scheme using MAE
+deltas, bootstrap intervals, and the proportion of minimally interpretable
+athletes improved.
+
+All 14 estimator/feature-set stability rows are classified as
+`consistently_worse` by point-estimate direction across leave-one-athlete-out
+and chronological evaluation. No feature group is consistently improved across
+both schemes.
+
+Detailed report:
+
+- `reports/track_b_stability.json`
+
+## Missingness
+
+Missingness is measured before imputation on the 84 modeling rows.
+
+Group coverage:
+
+| Feature group | Rows with any coverage | Complete rows | Athletes with any coverage |
+| --- | ---: | ---: | ---: |
+| prior history | 84 | 84 | 15 |
+| daily sleep | 77 | 77 | 14 |
+| caffeine | 84 | 0 | 15 |
+| wellness | 84 | 26 | 15 |
+| match context | 84 | 72 | 15 |
+| actigraphy | 84 | 84 | 15 |
+
+Highest feature-level missingness:
+
+| Feature | Missing % |
+| --- | ---: |
+| `tea_count` | 96.43 |
+| `cola_count` | 91.67 |
+| `espresso_count` | 80.95 |
+| `coffee_count` | 67.86 |
+| `soreness_location_2` | 54.76 |
+| `caffeine_time_category` | 42.86 |
+| `sleepquality` | 25.00 |
+
+Weak Track B performance could plausibly relate to sparse coverage, uneven
+coverage between athletes, near-constant fields, groups dominated by imputation,
+limited chronological rows, and unresolved timing. These are data-quality
+explanations, not established causes.
+
+Detailed report:
+
+- `reports/track_b_missingness.json`
 
 ## Product Implications
 
-Track A remains the defensible baseline for this prototype: estimate expected
-handgrip from an athlete's own prior performance history and report observed
-percent of baseline after the performance is known.
+The hardened evaluation supports evidence of no meaningful Track B improvement
+under this evaluation. It is stronger than merely saying there is no positive
+result, but it is not proof that contextual features can never help with better
+timing metadata, larger data, or verified actigraphy windows.
 
-Track B signals remain candidates for future product work, not deployable
-pre-workout predictors. Fort may consider using recovery, caffeine, wellness,
-match context, and actigraphy signals in an internal expected-performance model
-only after collection timing and actigraphy alignment are confirmed.
+For the current product story, Track A remains the defensible performance
+baseline. Athlete-facing UI should emphasize observed percent of personal
+baseline and contextual signals after performance. A hidden pre-workout expected
+performance estimate should use Track B-style signals only after timing and
+alignment are confirmed.
 
-For athlete-facing UI, the safer current direction is to show observed percent
-of baseline and contextual signals after performance, not a hidden pre-workout
-estimate that depends on timing-unverified same-row features.
-
-## Cautions
-
-- The sample is small: 84 rows from 15 athletes.
-- Source row order is assumed temporal for prior history and chronological
-  holdout, but calendar dates are not verified.
-- Daily response timing relative to handgrip is unresolved.
-- Actigraphy is joined by athlete and weekday only; it is not a verified
-  athlete-day or pre-handgrip window.
-- These results are predictive comparisons only. They do not establish
-  causal effects of sleep, caffeine, soreness, match context, or activity.
+No causal conclusion is supported, and no athlete intervention should be
+recommended from these results.
 
 Detailed outputs:
 

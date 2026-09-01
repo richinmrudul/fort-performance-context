@@ -1,0 +1,763 @@
+{
+  "analysis_label": "descriptive_cluster_bootstrap_fixed_oof_predictions",
+  "baseline_model": "track_a_prior_expanding_mean",
+  "comparisons": [
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_ridge",
+      "evaluation_scheme": "leave_one_athlete_out",
+      "feature_set": "prior_history_only",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": 0.00849781878508633,
+        "ci_upper": 0.4102887407663003,
+        "point_estimate": 0.20492417635420246
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 84,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.2690544240188102,
+        "ci_upper": 2.0304263774796154,
+        "point_estimate": 1.6253681371538515
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.4876683812549596,
+        "ci_upper": 2.2513802551520503,
+        "point_estimate": 1.830292313508054
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_ridge",
+      "evaluation_scheme": "leave_one_athlete_out",
+      "feature_set": "prior_history_plus_daily_sleep",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": 0.20067189555287318,
+        "ci_upper": 0.7205064505827116,
+        "point_estimate": 0.45475730093689015
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 84,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.2690544240188102,
+        "ci_upper": 2.0304263774796154,
+        "point_estimate": 1.6253681371538515
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.8082990915337065,
+        "ci_upper": 2.400418070101615,
+        "point_estimate": 2.0801254380907417
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_ridge",
+      "evaluation_scheme": "leave_one_athlete_out",
+      "feature_set": "prior_history_plus_caffeine",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": 0.04760927369491201,
+        "ci_upper": 0.5907750999053809,
+        "point_estimate": 0.29846695025539627
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 84,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.2690544240188102,
+        "ci_upper": 2.0304263774796154,
+        "point_estimate": 1.6253681371538515
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.5695489525345832,
+        "ci_upper": 2.3535775054599966,
+        "point_estimate": 1.9238350874092478
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_ridge",
+      "evaluation_scheme": "leave_one_athlete_out",
+      "feature_set": "prior_history_plus_wellness",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": 0.010396278480283634,
+        "ci_upper": 0.5513577699755264,
+        "point_estimate": 0.2791315334530211
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 84,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.2690544240188102,
+        "ci_upper": 2.0304263774796154,
+        "point_estimate": 1.6253681371538515
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.5878516687073645,
+        "ci_upper": 2.2302594009199708,
+        "point_estimate": 1.9044996706068726
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_ridge",
+      "evaluation_scheme": "leave_one_athlete_out",
+      "feature_set": "prior_history_plus_match_context",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": -0.06444810046729257,
+        "ci_upper": 0.39107845671649966,
+        "point_estimate": 0.15495642259898834
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 84,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.2690544240188102,
+        "ci_upper": 2.0304263774796154,
+        "point_estimate": 1.6253681371538515
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.4502090503442004,
+        "ci_upper": 2.163413727212977,
+        "point_estimate": 1.7803245597528399
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_ridge",
+      "evaluation_scheme": "leave_one_athlete_out",
+      "feature_set": "prior_history_plus_actigraphy",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": 0.06723113445370521,
+        "ci_upper": 0.9825639610396834,
+        "point_estimate": 0.4692358338883722
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 84,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.2690544240188102,
+        "ci_upper": 2.0304263774796154,
+        "point_estimate": 1.6253681371538515
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.7022709097807711,
+        "ci_upper": 2.5365687046831757,
+        "point_estimate": 2.0946039710422237
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_ridge",
+      "evaluation_scheme": "leave_one_athlete_out",
+      "feature_set": "all_track_b_exploratory",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": 0.46482611481385966,
+        "ci_upper": 1.573647468900931,
+        "point_estimate": 0.9753629983019076
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 84,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.2690544240188102,
+        "ci_upper": 2.0304263774796154,
+        "point_estimate": 1.6253681371538515
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 2.2541292020815793,
+        "ci_upper": 2.9670559881752165,
+        "point_estimate": 2.600731135455759
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_random_forest",
+      "evaluation_scheme": "leave_one_athlete_out",
+      "feature_set": "prior_history_only",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": 0.004042865864036427,
+        "ci_upper": 1.265030884826636,
+        "point_estimate": 0.5689152873785626
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 84,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.2690544240188102,
+        "ci_upper": 2.0304263774796154,
+        "point_estimate": 1.6253681371538515
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.4628460245092563,
+        "ci_upper": 3.0330983865410523,
+        "point_estimate": 2.194283424532414
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_random_forest",
+      "evaluation_scheme": "leave_one_athlete_out",
+      "feature_set": "prior_history_plus_daily_sleep",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": 0.15590777701269307,
+        "ci_upper": 1.3821072220037176,
+        "point_estimate": 0.6976577831902071
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 84,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.2690544240188102,
+        "ci_upper": 2.0304263774796154,
+        "point_estimate": 1.6253681371538515
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.617423943439198,
+        "ci_upper": 3.1516821972603344,
+        "point_estimate": 2.3230259203440586
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_random_forest",
+      "evaluation_scheme": "leave_one_athlete_out",
+      "feature_set": "prior_history_plus_caffeine",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": 0.03467691423289651,
+        "ci_upper": 1.3279374561010349,
+        "point_estimate": 0.6145932806953749
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 84,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.2690544240188102,
+        "ci_upper": 2.0304263774796154,
+        "point_estimate": 1.6253681371538515
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.4962497640105803,
+        "ci_upper": 3.0787871590419944,
+        "point_estimate": 2.2399614178492264
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_random_forest",
+      "evaluation_scheme": "leave_one_athlete_out",
+      "feature_set": "prior_history_plus_wellness",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": 0.02850698182814477,
+        "ci_upper": 1.3586265496701797,
+        "point_estimate": 0.617991692815089
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 84,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.2690544240188102,
+        "ci_upper": 2.0304263774796154,
+        "point_estimate": 1.6253681371538515
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.505894005643995,
+        "ci_upper": 3.092795312561658,
+        "point_estimate": 2.2433598299689406
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_random_forest",
+      "evaluation_scheme": "leave_one_athlete_out",
+      "feature_set": "prior_history_plus_match_context",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": 0.011632249463382508,
+        "ci_upper": 1.2709544091683658,
+        "point_estimate": 0.5755333312832465
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 84,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.2690544240188102,
+        "ci_upper": 2.0304263774796154,
+        "point_estimate": 1.6253681371538515
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.469282679335024,
+        "ci_upper": 3.0418398460918357,
+        "point_estimate": 2.200901468437098
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_random_forest",
+      "evaluation_scheme": "leave_one_athlete_out",
+      "feature_set": "prior_history_plus_actigraphy",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": 0.12513455098029322,
+        "ci_upper": 1.4860920175899743,
+        "point_estimate": 0.7424378727389602
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 84,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.2690544240188102,
+        "ci_upper": 2.0304263774796154,
+        "point_estimate": 1.6253681371538515
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.59470612967135,
+        "ci_upper": 3.2405525427672504,
+        "point_estimate": 2.3678060098928118
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_random_forest",
+      "evaluation_scheme": "leave_one_athlete_out",
+      "feature_set": "all_track_b_exploratory",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": 0.20728330691911703,
+        "ci_upper": 1.5527326312075596,
+        "point_estimate": 0.8218694984946013
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 84,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.2690544240188102,
+        "ci_upper": 2.0304263774796154,
+        "point_estimate": 1.6253681371538515
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.7180419010556056,
+        "ci_upper": 3.2775766444527163,
+        "point_estimate": 2.447237635648453
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_ridge",
+      "evaluation_scheme": "chronological_holdout",
+      "feature_set": "prior_history_only",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": 0.09429833506371377,
+        "ci_upper": 0.7412462095591664,
+        "point_estimate": 0.3901562644289598
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 33,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.0291837269905013,
+        "ci_upper": 1.8540004083493675,
+        "point_estimate": 1.4555125934671385
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.4149444911107234,
+        "ci_upper": 2.2011965849524753,
+        "point_estimate": 1.8456688578960982
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_ridge",
+      "evaluation_scheme": "chronological_holdout",
+      "feature_set": "prior_history_plus_daily_sleep",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": 0.1226589825734474,
+        "ci_upper": 0.8567546897740196,
+        "point_estimate": 0.4704333572929602
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 33,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.0291837269905013,
+        "ci_upper": 1.8540004083493675,
+        "point_estimate": 1.4555125934671385
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.5827762372366068,
+        "ci_upper": 2.231528985395119,
+        "point_estimate": 1.9259459507600987
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_ridge",
+      "evaluation_scheme": "chronological_holdout",
+      "feature_set": "prior_history_plus_caffeine",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": 0.07418252062014202,
+        "ci_upper": 0.7808989959745254,
+        "point_estimate": 0.38713384765267644
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 33,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.0291837269905013,
+        "ci_upper": 1.8540004083493675,
+        "point_estimate": 1.4555125934671385
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.4073061047018358,
+        "ci_upper": 2.235318114940663,
+        "point_estimate": 1.842646441119815
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_ridge",
+      "evaluation_scheme": "chronological_holdout",
+      "feature_set": "prior_history_plus_wellness",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": 0.12825529995117302,
+        "ci_upper": 0.7602822614470623,
+        "point_estimate": 0.43953494487934397
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 33,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.0291837269905013,
+        "ci_upper": 1.8540004083493675,
+        "point_estimate": 1.4555125934671385
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.4080331349961994,
+        "ci_upper": 2.401927909355474,
+        "point_estimate": 1.8950475383464824
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_ridge",
+      "evaluation_scheme": "chronological_holdout",
+      "feature_set": "prior_history_plus_match_context",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": 0.06293059434000586,
+        "ci_upper": 0.898876736007102,
+        "point_estimate": 0.46290231759124256
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 33,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.0291837269905013,
+        "ci_upper": 1.8540004083493675,
+        "point_estimate": 1.4555125934671385
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.5291249288123603,
+        "ci_upper": 2.2540514041760953,
+        "point_estimate": 1.918414911058381
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_ridge",
+      "evaluation_scheme": "chronological_holdout",
+      "feature_set": "prior_history_plus_actigraphy",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": 0.21486286361564091,
+        "ci_upper": 0.8349361099836696,
+        "point_estimate": 0.5305225106926887
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 33,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.0291837269905013,
+        "ci_upper": 1.8540004083493675,
+        "point_estimate": 1.4555125934671385
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.5529188695876355,
+        "ci_upper": 2.345884768151238,
+        "point_estimate": 1.9860351041598272
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_ridge",
+      "evaluation_scheme": "chronological_holdout",
+      "feature_set": "all_track_b_exploratory",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": -0.05938800429245514,
+        "ci_upper": 1.0088523598584709,
+        "point_estimate": 0.4909642935734144
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 33,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.0291837269905013,
+        "ci_upper": 1.8540004083493675,
+        "point_estimate": 1.4555125934671385
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.377413310079737,
+        "ci_upper": 2.450014902475066,
+        "point_estimate": 1.9464768870405529
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_random_forest",
+      "evaluation_scheme": "chronological_holdout",
+      "feature_set": "prior_history_only",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": -0.16513741701075865,
+        "ci_upper": 1.0806751861876402,
+        "point_estimate": 0.3981010953373614
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 33,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.0291837269905013,
+        "ci_upper": 1.8540004083493675,
+        "point_estimate": 1.4555125934671385
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.0140493927082597,
+        "ci_upper": 2.8413120257641644,
+        "point_estimate": 1.8536136888044998
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_random_forest",
+      "evaluation_scheme": "chronological_holdout",
+      "feature_set": "prior_history_plus_daily_sleep",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": -0.07690331083742047,
+        "ci_upper": 1.2126553363587196,
+        "point_estimate": 0.4991412769643797
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 33,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.0291837269905013,
+        "ci_upper": 1.8540004083493675,
+        "point_estimate": 1.4555125934671385
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.102382327590816,
+        "ci_upper": 2.9379465569716667,
+        "point_estimate": 1.9546538704315182
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_random_forest",
+      "evaluation_scheme": "chronological_holdout",
+      "feature_set": "prior_history_plus_caffeine",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": -0.1879858419135491,
+        "ci_upper": 1.098077040971944,
+        "point_estimate": 0.4003694025016882
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 33,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.0291837269905013,
+        "ci_upper": 1.8540004083493675,
+        "point_estimate": 1.4555125934671385
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 0.9999817704417553,
+        "ci_upper": 2.862093762438548,
+        "point_estimate": 1.8558819959688266
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_random_forest",
+      "evaluation_scheme": "chronological_holdout",
+      "feature_set": "prior_history_plus_wellness",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": -0.12025435118896735,
+        "ci_upper": 1.1101896527835624,
+        "point_estimate": 0.4370585751065068
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 33,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.0291837269905013,
+        "ci_upper": 1.8540004083493675,
+        "point_estimate": 1.4555125934671385
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.0479142098415122,
+        "ci_upper": 2.8943686007546363,
+        "point_estimate": 1.8925711685736453
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_random_forest",
+      "evaluation_scheme": "chronological_holdout",
+      "feature_set": "prior_history_plus_match_context",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": -0.13226281168188184,
+        "ci_upper": 1.1017642719466079,
+        "point_estimate": 0.4184687852701565
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 33,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.0291837269905013,
+        "ci_upper": 1.8540004083493675,
+        "point_estimate": 1.4555125934671385
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.039717271314664,
+        "ci_upper": 2.862412801753328,
+        "point_estimate": 1.873981378737295
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_random_forest",
+      "evaluation_scheme": "chronological_holdout",
+      "feature_set": "prior_history_plus_actigraphy",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": -0.11025137978437882,
+        "ci_upper": 1.0764552504174336,
+        "point_estimate": 0.4185591429374955
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 33,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.0291837269905013,
+        "ci_upper": 1.8540004083493675,
+        "point_estimate": 1.4555125934671385
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.0611819981745216,
+        "ci_upper": 2.8359983770045427,
+        "point_estimate": 1.874071736404634
+      }
+    },
+    {
+      "athlete_cluster_count": 15,
+      "bootstrap_iterations": 2000,
+      "confidence_level": 0.95,
+      "estimator": "sklearn_random_forest",
+      "evaluation_scheme": "chronological_holdout",
+      "feature_set": "all_track_b_exploratory",
+      "limitation": "Descriptive clustered bootstrap over fixed out-of-fold predictions; small athlete count and no refitting inside bootstrap replicates.",
+      "paired_delta_mae_kg": {
+        "ci_lower": -0.03858859103062341,
+        "ci_upper": 1.194774734021564,
+        "point_estimate": 0.510152867262869
+      },
+      "resampling_unit": "athlete_cluster",
+      "row_count": 33,
+      "seed": 20260831,
+      "track_a_mae_kg": {
+        "ci_lower": 1.0291837269905013,
+        "ci_upper": 1.8540004083493675,
+        "point_estimate": 1.4555125934671385
+      },
+      "track_b_mae_kg": {
+        "ci_lower": 1.14701064068677,
+        "ci_upper": 2.9284419019912633,
+        "point_estimate": 1.9656654607300075
+      }
+    }
+  ],
+  "delta_definition": "Track B MAE - Track A MAE; negative means Track B improved"
+}

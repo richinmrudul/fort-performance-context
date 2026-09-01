@@ -1,0 +1,1188 @@
+{
+  "analysis_label": "track_b_model_feature_audit",
+  "excluded_columns": [
+    {
+      "exclusion_reason": "actigraphy_join_or_validation_metadata_not_context_signal",
+      "feature_name": "actigraphy_expected_epoch_count",
+      "included": false
+    },
+    {
+      "exclusion_reason": "status_or_leakage_label_unavailable_at_prediction_time",
+      "feature_name": "actigraphy_join_assumption",
+      "included": false
+    },
+    {
+      "exclusion_reason": "actigraphy_join_or_validation_metadata_not_context_signal",
+      "feature_name": "actigraphy_partial_window_flag",
+      "included": false
+    },
+    {
+      "exclusion_reason": "actigraphy_join_or_validation_metadata_not_context_signal",
+      "feature_name": "actigraphy_row_count",
+      "included": false
+    },
+    {
+      "exclusion_reason": "actigraphy_join_or_validation_metadata_not_context_signal",
+      "feature_name": "actigraphy_shared_provisional_window",
+      "included": false
+    },
+    {
+      "exclusion_reason": "actigraphy_join_or_validation_metadata_not_context_signal",
+      "feature_name": "actigraphy_shared_provisional_window_row_count",
+      "included": false
+    },
+    {
+      "exclusion_reason": "actigraphy_join_or_validation_metadata_not_context_signal",
+      "feature_name": "actigraphy_source_sequence_missing_samples",
+      "included": false
+    },
+    {
+      "exclusion_reason": "status_or_leakage_label_unavailable_at_prediction_time",
+      "feature_name": "actigraphy_source_sequence_status",
+      "included": false
+    },
+    {
+      "exclusion_reason": "actigraphy_join_or_validation_metadata_not_context_signal",
+      "feature_name": "actigraphy_source_sequence_unexpected_transitions",
+      "included": false
+    },
+    {
+      "exclusion_reason": "actigraphy_join_or_validation_metadata_not_context_signal",
+      "feature_name": "actigraphy_source_sequence_valid",
+      "included": false
+    },
+    {
+      "exclusion_reason": "status_or_leakage_label_unavailable_at_prediction_time",
+      "feature_name": "actigraphy_weekday_window_id",
+      "included": false
+    },
+    {
+      "exclusion_reason": "actigraphy_join_or_validation_metadata_not_context_signal",
+      "feature_name": "actigraphy_window_epoch_count",
+      "included": false
+    },
+    {
+      "exclusion_reason": "identifier_not_predictive_feature",
+      "feature_name": "athlete_id",
+      "included": false
+    },
+    {
+      "exclusion_reason": "source_order_field_not_predictive_feature",
+      "feature_name": "athlete_row_index",
+      "included": false
+    },
+    {
+      "exclusion_reason": "provenance_or_split_control",
+      "feature_name": "duplicate_state",
+      "included": false
+    },
+    {
+      "exclusion_reason": "provenance_or_split_control",
+      "feature_name": "exclude_from_modeling_default",
+      "included": false
+    },
+    {
+      "exclusion_reason": "target_or_target_derived",
+      "feature_name": "handgrip_kg",
+      "included": false
+    },
+    {
+      "exclusion_reason": "provenance_or_split_control",
+      "feature_name": "is_primary_modeling_row",
+      "included": false
+    },
+    {
+      "exclusion_reason": "identifier_not_predictive_feature",
+      "feature_name": "observation_id",
+      "included": false
+    },
+    {
+      "exclusion_reason": "source_order_field_not_predictive_feature",
+      "feature_name": "raw_daily_row_index",
+      "included": false
+    },
+    {
+      "exclusion_reason": "target_or_target_derived",
+      "feature_name": "target_pct_prior_median_baseline",
+      "included": false
+    },
+    {
+      "exclusion_reason": "status_or_leakage_label_unavailable_at_prediction_time",
+      "feature_name": "track_a_leakage_label",
+      "included": false
+    },
+    {
+      "exclusion_reason": "status_or_leakage_label_unavailable_at_prediction_time",
+      "feature_name": "track_a_timing_label",
+      "included": false
+    },
+    {
+      "exclusion_reason": "provenance_or_split_control",
+      "feature_name": "weekday",
+      "included": false
+    }
+  ],
+  "included_model_features": [
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_valid_handgrip_count",
+      "feature_set": "prior_history_only",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_expanding_handgrip_mean",
+      "feature_set": "prior_history_only",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_expanding_handgrip_median",
+      "feature_set": "prior_history_only",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_expanding_handgrip_std",
+      "feature_set": "prior_history_only",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_valid_handgrip_count",
+      "feature_set": "prior_history_plus_daily_sleep",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_expanding_handgrip_mean",
+      "feature_set": "prior_history_plus_daily_sleep",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_expanding_handgrip_median",
+      "feature_set": "prior_history_plus_daily_sleep",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_expanding_handgrip_std",
+      "feature_set": "prior_history_plus_daily_sleep",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "daily_sleep",
+      "feature_name": "objective_total_sleep_time",
+      "feature_set": "prior_history_plus_daily_sleep",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "daily_sleep",
+      "feature_name": "objective_sleep_intervals",
+      "feature_set": "prior_history_plus_daily_sleep",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "daily_sleep",
+      "feature_name": "objective_longest_interval_duration",
+      "feature_set": "prior_history_plus_daily_sleep",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "daily_sleep",
+      "feature_name": "objective_sleep_period_mean",
+      "feature_set": "prior_history_plus_daily_sleep",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "daily_sleep",
+      "feature_name": "objective_sleep_period_standard_deviation",
+      "feature_set": "prior_history_plus_daily_sleep",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "daily_sleep",
+      "feature_name": "objective_sleep_period_msd",
+      "feature_set": "prior_history_plus_daily_sleep",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "daily_sleep",
+      "feature_name": "sleep_onset_minutes_after_midnight",
+      "feature_set": "prior_history_plus_daily_sleep",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "daily_sleep",
+      "feature_name": "sleep_offset_minutes_after_midnight",
+      "feature_set": "prior_history_plus_daily_sleep",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "daily_sleep",
+      "feature_name": "longest_interval_start_minutes_after_midnight",
+      "feature_set": "prior_history_plus_daily_sleep",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "daily_sleep",
+      "feature_name": "longest_interval_end_minutes_after_midnight",
+      "feature_set": "prior_history_plus_daily_sleep",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_valid_handgrip_count",
+      "feature_set": "prior_history_plus_caffeine",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_expanding_handgrip_mean",
+      "feature_set": "prior_history_plus_caffeine",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_expanding_handgrip_median",
+      "feature_set": "prior_history_plus_caffeine",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_expanding_handgrip_std",
+      "feature_set": "prior_history_plus_caffeine",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "caffeine",
+      "feature_name": "caffeine_mg",
+      "feature_set": "prior_history_plus_caffeine",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "caffeine",
+      "feature_name": "caffeine_time_category",
+      "feature_set": "prior_history_plus_caffeine",
+      "handling": "categorical_missing_category_one_hot",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "caffeine",
+      "feature_name": "coffee_count",
+      "feature_set": "prior_history_plus_caffeine",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "caffeine",
+      "feature_name": "cola_count",
+      "feature_set": "prior_history_plus_caffeine",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "caffeine",
+      "feature_name": "tea_count",
+      "feature_set": "prior_history_plus_caffeine",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "caffeine",
+      "feature_name": "espresso_count",
+      "feature_set": "prior_history_plus_caffeine",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "caffeine",
+      "feature_name": "caffeine_present",
+      "feature_set": "prior_history_plus_caffeine",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_valid_handgrip_count",
+      "feature_set": "prior_history_plus_wellness",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_expanding_handgrip_mean",
+      "feature_set": "prior_history_plus_wellness",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_expanding_handgrip_median",
+      "feature_set": "prior_history_plus_wellness",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_expanding_handgrip_std",
+      "feature_set": "prior_history_plus_wellness",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "wellness",
+      "feature_name": "sleepquality",
+      "feature_set": "prior_history_plus_wellness",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "wellness",
+      "feature_name": "sleepdura_sr",
+      "feature_set": "prior_history_plus_wellness",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "wellness",
+      "feature_name": "readiness",
+      "feature_set": "prior_history_plus_wellness",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "wellness",
+      "feature_name": "fatigue",
+      "feature_set": "prior_history_plus_wellness",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "wellness",
+      "feature_name": "soreness",
+      "feature_set": "prior_history_plus_wellness",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "wellness",
+      "feature_name": "soreness_location_1",
+      "feature_set": "prior_history_plus_wellness",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "wellness",
+      "feature_name": "soreness_location_2",
+      "feature_set": "prior_history_plus_wellness",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_valid_handgrip_count",
+      "feature_set": "prior_history_plus_match_context",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_expanding_handgrip_mean",
+      "feature_set": "prior_history_plus_match_context",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_expanding_handgrip_median",
+      "feature_set": "prior_history_plus_match_context",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_expanding_handgrip_std",
+      "feature_set": "prior_history_plus_match_context",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "match_context",
+      "feature_name": "matchday_category",
+      "feature_set": "prior_history_plus_match_context",
+      "handling": "categorical_missing_category_one_hot",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "match_context",
+      "feature_name": "matchday_present",
+      "feature_set": "prior_history_plus_match_context",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "match_context",
+      "feature_name": "matchday_is_match_day",
+      "feature_set": "prior_history_plus_match_context",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "match_context",
+      "feature_name": "matchday_relative_days",
+      "feature_set": "prior_history_plus_match_context",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_valid_handgrip_count",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_expanding_handgrip_mean",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_expanding_handgrip_median",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_expanding_handgrip_std",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_vm_mean",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_vm_median",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_vm_std",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_vm_max",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_vm_sum",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_x_mean",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_y_mean",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_z_mean",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_all_algorithm_nonwear_invalid_fraction",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_CK_sleep_fraction",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_CK_wake_fraction",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_CK_nonwear_fraction",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_Oakley_sleep_fraction",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_Oakley_wake_fraction",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_Oakley_nonwear_fraction",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_Sadeh_sleep_fraction",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_Sadeh_wake_fraction",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_Sadeh_nonwear_fraction",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_fourier_HMM_sleep_fraction",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_fourier_HMM_wake_fraction",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_fourier_HMM_nonwear_fraction",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_LSTM_sleep_fraction",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_LSTM_wake_fraction",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_LSTM_nonwear_fraction",
+      "feature_set": "prior_history_plus_actigraphy",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_valid_handgrip_count",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_expanding_handgrip_mean",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_expanding_handgrip_median",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "prior_history",
+      "feature_name": "prior_expanding_handgrip_std",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "prior_only_prospective_assumption"
+    },
+    {
+      "feature_group": "daily_sleep",
+      "feature_name": "objective_total_sleep_time",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "daily_sleep",
+      "feature_name": "objective_sleep_intervals",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "daily_sleep",
+      "feature_name": "objective_longest_interval_duration",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "daily_sleep",
+      "feature_name": "objective_sleep_period_mean",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "daily_sleep",
+      "feature_name": "objective_sleep_period_standard_deviation",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "daily_sleep",
+      "feature_name": "objective_sleep_period_msd",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "daily_sleep",
+      "feature_name": "sleep_onset_minutes_after_midnight",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "daily_sleep",
+      "feature_name": "sleep_offset_minutes_after_midnight",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "daily_sleep",
+      "feature_name": "longest_interval_start_minutes_after_midnight",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "daily_sleep",
+      "feature_name": "longest_interval_end_minutes_after_midnight",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "caffeine",
+      "feature_name": "caffeine_mg",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "caffeine",
+      "feature_name": "caffeine_time_category",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "categorical_missing_category_one_hot",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "caffeine",
+      "feature_name": "coffee_count",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "caffeine",
+      "feature_name": "cola_count",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "caffeine",
+      "feature_name": "tea_count",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "caffeine",
+      "feature_name": "espresso_count",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "caffeine",
+      "feature_name": "caffeine_present",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "wellness",
+      "feature_name": "sleepquality",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "wellness",
+      "feature_name": "sleepdura_sr",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "wellness",
+      "feature_name": "readiness",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "wellness",
+      "feature_name": "fatigue",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "wellness",
+      "feature_name": "soreness",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "wellness",
+      "feature_name": "soreness_location_1",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "wellness",
+      "feature_name": "soreness_location_2",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "match_context",
+      "feature_name": "matchday_category",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "categorical_missing_category_one_hot",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "match_context",
+      "feature_name": "matchday_present",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "match_context",
+      "feature_name": "matchday_is_match_day",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "match_context",
+      "feature_name": "matchday_relative_days",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_vm_mean",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_vm_median",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_vm_std",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_vm_max",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_vm_sum",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_x_mean",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_y_mean",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_z_mean",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_all_algorithm_nonwear_invalid_fraction",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_CK_sleep_fraction",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_CK_wake_fraction",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_CK_nonwear_fraction",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_Oakley_sleep_fraction",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_Oakley_wake_fraction",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_Oakley_nonwear_fraction",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_Sadeh_sleep_fraction",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_Sadeh_wake_fraction",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_Sadeh_nonwear_fraction",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_fourier_HMM_sleep_fraction",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_fourier_HMM_wake_fraction",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_fourier_HMM_nonwear_fraction",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_LSTM_sleep_fraction",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_LSTM_wake_fraction",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    },
+    {
+      "feature_group": "actigraphy",
+      "feature_name": "actigraphy_LSTM_nonwear_fraction",
+      "feature_set": "all_track_b_exploratory",
+      "handling": "numeric_median_impute_scale",
+      "included": true,
+      "timing_verification_status": "timing_unverified"
+    }
+  ],
+  "leakage_controls": [
+    "Targets, identifiers, row indices, status labels, and retrospective baselines are excluded.",
+    "Numeric imputation, scaling, categorical missing imputation, and one-hot encoding are fit inside training folds only.",
+    "Track B daily and actigraphy features remain timing-unverified."
+  ]
+}

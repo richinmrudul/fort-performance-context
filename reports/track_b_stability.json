@@ -1,0 +1,328 @@
+{
+  "analysis_label": "feature_set_stability",
+  "delta_definition": "Track B MAE - Track A MAE; negative means Track B improved",
+  "stability_rows": [
+    {
+      "athletes_improved_count": 5,
+      "athletes_improved_proportion": 0.38461538461538464,
+      "chronological_bootstrap_delta_ci": {
+        "ci_lower": 0.09429833506371377,
+        "ci_upper": 0.7412462095591664,
+        "point_estimate": 0.3901562644289598
+      },
+      "chronological_mae_delta_kg": 0.39015626442895934,
+      "classification": "consistently_worse",
+      "estimator": "sklearn_ridge",
+      "feature_set": "prior_history_only",
+      "improvement_direction_consistent_across_schemes": false,
+      "loo_bootstrap_delta_ci": {
+        "ci_lower": 0.00849781878508633,
+        "ci_upper": 0.4102887407663003,
+        "point_estimate": 0.20492417635420246
+      },
+      "loo_mae_delta_kg": 0.2049241763542029,
+      "minimally_interpretable_athletes": 13,
+      "ridge_or_forest": "sklearn_ridge",
+      "small_row_dependency_note": "Per-athlete rows below 3 are labeled anecdotal and excluded from this stability proportion."
+    },
+    {
+      "athletes_improved_count": 6,
+      "athletes_improved_proportion": 0.46153846153846156,
+      "chronological_bootstrap_delta_ci": {
+        "ci_lower": -0.16513741701075865,
+        "ci_upper": 1.0806751861876402,
+        "point_estimate": 0.3981010953373614
+      },
+      "chronological_mae_delta_kg": 0.3981010953373607,
+      "classification": "consistently_worse",
+      "estimator": "sklearn_random_forest",
+      "feature_set": "prior_history_only",
+      "improvement_direction_consistent_across_schemes": false,
+      "loo_bootstrap_delta_ci": {
+        "ci_lower": 0.004042865864036427,
+        "ci_upper": 1.265030884826636,
+        "point_estimate": 0.5689152873785626
+      },
+      "loo_mae_delta_kg": 0.5689152873785637,
+      "minimally_interpretable_athletes": 13,
+      "ridge_or_forest": "sklearn_random_forest",
+      "small_row_dependency_note": "Per-athlete rows below 3 are labeled anecdotal and excluded from this stability proportion."
+    },
+    {
+      "athletes_improved_count": 4,
+      "athletes_improved_proportion": 0.3076923076923077,
+      "chronological_bootstrap_delta_ci": {
+        "ci_lower": 0.1226589825734474,
+        "ci_upper": 0.8567546897740196,
+        "point_estimate": 0.4704333572929602
+      },
+      "chronological_mae_delta_kg": 0.47043335729296,
+      "classification": "consistently_worse",
+      "estimator": "sklearn_ridge",
+      "feature_set": "prior_history_plus_daily_sleep",
+      "improvement_direction_consistent_across_schemes": false,
+      "loo_bootstrap_delta_ci": {
+        "ci_lower": 0.20067189555287318,
+        "ci_upper": 0.7205064505827116,
+        "point_estimate": 0.45475730093689015
+      },
+      "loo_mae_delta_kg": 0.4547573009368904,
+      "minimally_interpretable_athletes": 13,
+      "ridge_or_forest": "sklearn_ridge",
+      "small_row_dependency_note": "Per-athlete rows below 3 are labeled anecdotal and excluded from this stability proportion."
+    },
+    {
+      "athletes_improved_count": 3,
+      "athletes_improved_proportion": 0.23076923076923078,
+      "chronological_bootstrap_delta_ci": {
+        "ci_lower": -0.07690331083742047,
+        "ci_upper": 1.2126553363587196,
+        "point_estimate": 0.4991412769643797
+      },
+      "chronological_mae_delta_kg": 0.4991412769643795,
+      "classification": "consistently_worse",
+      "estimator": "sklearn_random_forest",
+      "feature_set": "prior_history_plus_daily_sleep",
+      "improvement_direction_consistent_across_schemes": false,
+      "loo_bootstrap_delta_ci": {
+        "ci_lower": 0.15590777701269307,
+        "ci_upper": 1.3821072220037176,
+        "point_estimate": 0.6976577831902071
+      },
+      "loo_mae_delta_kg": 0.6976577831902078,
+      "minimally_interpretable_athletes": 13,
+      "ridge_or_forest": "sklearn_random_forest",
+      "small_row_dependency_note": "Per-athlete rows below 3 are labeled anecdotal and excluded from this stability proportion."
+    },
+    {
+      "athletes_improved_count": 4,
+      "athletes_improved_proportion": 0.3076923076923077,
+      "chronological_bootstrap_delta_ci": {
+        "ci_lower": 0.07418252062014202,
+        "ci_upper": 0.7808989959745254,
+        "point_estimate": 0.38713384765267644
+      },
+      "chronological_mae_delta_kg": 0.3871338476526762,
+      "classification": "consistently_worse",
+      "estimator": "sklearn_ridge",
+      "feature_set": "prior_history_plus_caffeine",
+      "improvement_direction_consistent_across_schemes": false,
+      "loo_bootstrap_delta_ci": {
+        "ci_lower": 0.04760927369491201,
+        "ci_upper": 0.5907750999053809,
+        "point_estimate": 0.29846695025539627
+      },
+      "loo_mae_delta_kg": 0.29846695025539693,
+      "minimally_interpretable_athletes": 13,
+      "ridge_or_forest": "sklearn_ridge",
+      "small_row_dependency_note": "Per-athlete rows below 3 are labeled anecdotal and excluded from this stability proportion."
+    },
+    {
+      "athletes_improved_count": 6,
+      "athletes_improved_proportion": 0.46153846153846156,
+      "chronological_bootstrap_delta_ci": {
+        "ci_lower": -0.1879858419135491,
+        "ci_upper": 1.098077040971944,
+        "point_estimate": 0.4003694025016882
+      },
+      "chronological_mae_delta_kg": 0.4003694025016875,
+      "classification": "consistently_worse",
+      "estimator": "sklearn_random_forest",
+      "feature_set": "prior_history_plus_caffeine",
+      "improvement_direction_consistent_across_schemes": false,
+      "loo_bootstrap_delta_ci": {
+        "ci_lower": 0.03467691423289651,
+        "ci_upper": 1.3279374561010349,
+        "point_estimate": 0.6145932806953749
+      },
+      "loo_mae_delta_kg": 0.6145932806953756,
+      "minimally_interpretable_athletes": 13,
+      "ridge_or_forest": "sklearn_random_forest",
+      "small_row_dependency_note": "Per-athlete rows below 3 are labeled anecdotal and excluded from this stability proportion."
+    },
+    {
+      "athletes_improved_count": 5,
+      "athletes_improved_proportion": 0.38461538461538464,
+      "chronological_bootstrap_delta_ci": {
+        "ci_lower": 0.12825529995117302,
+        "ci_upper": 0.7602822614470623,
+        "point_estimate": 0.43953494487934397
+      },
+      "chronological_mae_delta_kg": 0.4395349448793435,
+      "classification": "consistently_worse",
+      "estimator": "sklearn_ridge",
+      "feature_set": "prior_history_plus_wellness",
+      "improvement_direction_consistent_across_schemes": false,
+      "loo_bootstrap_delta_ci": {
+        "ci_lower": 0.010396278480283634,
+        "ci_upper": 0.5513577699755264,
+        "point_estimate": 0.2791315334530211
+      },
+      "loo_mae_delta_kg": 0.2791315334530218,
+      "minimally_interpretable_athletes": 13,
+      "ridge_or_forest": "sklearn_ridge",
+      "small_row_dependency_note": "Per-athlete rows below 3 are labeled anecdotal and excluded from this stability proportion."
+    },
+    {
+      "athletes_improved_count": 5,
+      "athletes_improved_proportion": 0.38461538461538464,
+      "chronological_bootstrap_delta_ci": {
+        "ci_lower": -0.12025435118896735,
+        "ci_upper": 1.1101896527835624,
+        "point_estimate": 0.4370585751065068
+      },
+      "chronological_mae_delta_kg": 0.4370585751065068,
+      "classification": "consistently_worse",
+      "estimator": "sklearn_random_forest",
+      "feature_set": "prior_history_plus_wellness",
+      "improvement_direction_consistent_across_schemes": false,
+      "loo_bootstrap_delta_ci": {
+        "ci_lower": 0.02850698182814477,
+        "ci_upper": 1.3586265496701797,
+        "point_estimate": 0.617991692815089
+      },
+      "loo_mae_delta_kg": 0.6179916928150901,
+      "minimally_interpretable_athletes": 13,
+      "ridge_or_forest": "sklearn_random_forest",
+      "small_row_dependency_note": "Per-athlete rows below 3 are labeled anecdotal and excluded from this stability proportion."
+    },
+    {
+      "athletes_improved_count": 5,
+      "athletes_improved_proportion": 0.38461538461538464,
+      "chronological_bootstrap_delta_ci": {
+        "ci_lower": 0.06293059434000586,
+        "ci_upper": 0.898876736007102,
+        "point_estimate": 0.46290231759124256
+      },
+      "chronological_mae_delta_kg": 0.46290231759124234,
+      "classification": "consistently_worse",
+      "estimator": "sklearn_ridge",
+      "feature_set": "prior_history_plus_match_context",
+      "improvement_direction_consistent_across_schemes": false,
+      "loo_bootstrap_delta_ci": {
+        "ci_lower": -0.06444810046729257,
+        "ci_upper": 0.39107845671649966,
+        "point_estimate": 0.15495642259898834
+      },
+      "loo_mae_delta_kg": 0.15495642259898879,
+      "minimally_interpretable_athletes": 13,
+      "ridge_or_forest": "sklearn_ridge",
+      "small_row_dependency_note": "Per-athlete rows below 3 are labeled anecdotal and excluded from this stability proportion."
+    },
+    {
+      "athletes_improved_count": 5,
+      "athletes_improved_proportion": 0.38461538461538464,
+      "chronological_bootstrap_delta_ci": {
+        "ci_lower": -0.13226281168188184,
+        "ci_upper": 1.1017642719466079,
+        "point_estimate": 0.4184687852701565
+      },
+      "chronological_mae_delta_kg": 0.4184687852701563,
+      "classification": "consistently_worse",
+      "estimator": "sklearn_random_forest",
+      "feature_set": "prior_history_plus_match_context",
+      "improvement_direction_consistent_across_schemes": false,
+      "loo_bootstrap_delta_ci": {
+        "ci_lower": 0.011632249463382508,
+        "ci_upper": 1.2709544091683658,
+        "point_estimate": 0.5755333312832465
+      },
+      "loo_mae_delta_kg": 0.5755333312832476,
+      "minimally_interpretable_athletes": 13,
+      "ridge_or_forest": "sklearn_random_forest",
+      "small_row_dependency_note": "Per-athlete rows below 3 are labeled anecdotal and excluded from this stability proportion."
+    },
+    {
+      "athletes_improved_count": 4,
+      "athletes_improved_proportion": 0.3076923076923077,
+      "chronological_bootstrap_delta_ci": {
+        "ci_lower": 0.21486286361564091,
+        "ci_upper": 0.8349361099836696,
+        "point_estimate": 0.5305225106926887
+      },
+      "chronological_mae_delta_kg": 0.5305225106926885,
+      "classification": "consistently_worse",
+      "estimator": "sklearn_ridge",
+      "feature_set": "prior_history_plus_actigraphy",
+      "improvement_direction_consistent_across_schemes": false,
+      "loo_bootstrap_delta_ci": {
+        "ci_lower": 0.06723113445370521,
+        "ci_upper": 0.9825639610396834,
+        "point_estimate": 0.4692358338883722
+      },
+      "loo_mae_delta_kg": 0.46923583388837287,
+      "minimally_interpretable_athletes": 13,
+      "ridge_or_forest": "sklearn_ridge",
+      "small_row_dependency_note": "Per-athlete rows below 3 are labeled anecdotal and excluded from this stability proportion."
+    },
+    {
+      "athletes_improved_count": 5,
+      "athletes_improved_proportion": 0.38461538461538464,
+      "chronological_bootstrap_delta_ci": {
+        "ci_lower": -0.11025137978437882,
+        "ci_upper": 1.0764552504174336,
+        "point_estimate": 0.4185591429374955
+      },
+      "chronological_mae_delta_kg": 0.4185591429374953,
+      "classification": "consistently_worse",
+      "estimator": "sklearn_random_forest",
+      "feature_set": "prior_history_plus_actigraphy",
+      "improvement_direction_consistent_across_schemes": false,
+      "loo_bootstrap_delta_ci": {
+        "ci_lower": 0.12513455098029322,
+        "ci_upper": 1.4860920175899743,
+        "point_estimate": 0.7424378727389602
+      },
+      "loo_mae_delta_kg": 0.7424378727389609,
+      "minimally_interpretable_athletes": 13,
+      "ridge_or_forest": "sklearn_random_forest",
+      "small_row_dependency_note": "Per-athlete rows below 3 are labeled anecdotal and excluded from this stability proportion."
+    },
+    {
+      "athletes_improved_count": 4,
+      "athletes_improved_proportion": 0.3076923076923077,
+      "chronological_bootstrap_delta_ci": {
+        "ci_lower": -0.05938800429245514,
+        "ci_upper": 1.0088523598584709,
+        "point_estimate": 0.4909642935734144
+      },
+      "chronological_mae_delta_kg": 0.49096429357341376,
+      "classification": "consistently_worse",
+      "estimator": "sklearn_ridge",
+      "feature_set": "all_track_b_exploratory",
+      "improvement_direction_consistent_across_schemes": false,
+      "loo_bootstrap_delta_ci": {
+        "ci_lower": 0.46482611481385966,
+        "ci_upper": 1.573647468900931,
+        "point_estimate": 0.9753629983019076
+      },
+      "loo_mae_delta_kg": 0.9753629983019083,
+      "minimally_interpretable_athletes": 13,
+      "ridge_or_forest": "sklearn_ridge",
+      "small_row_dependency_note": "Per-athlete rows below 3 are labeled anecdotal and excluded from this stability proportion."
+    },
+    {
+      "athletes_improved_count": 5,
+      "athletes_improved_proportion": 0.38461538461538464,
+      "chronological_bootstrap_delta_ci": {
+        "ci_lower": -0.03858859103062341,
+        "ci_upper": 1.194774734021564,
+        "point_estimate": 0.510152867262869
+      },
+      "chronological_mae_delta_kg": 0.5101528672628683,
+      "classification": "consistently_worse",
+      "estimator": "sklearn_random_forest",
+      "feature_set": "all_track_b_exploratory",
+      "improvement_direction_consistent_across_schemes": false,
+      "loo_bootstrap_delta_ci": {
+        "ci_lower": 0.20728330691911703,
+        "ci_upper": 1.5527326312075596,
+        "point_estimate": 0.8218694984946013
+      },
+      "loo_mae_delta_kg": 0.821869498494602,
+      "minimally_interpretable_athletes": 13,
+      "ridge_or_forest": "sklearn_random_forest",
+      "small_row_dependency_note": "Per-athlete rows below 3 are labeled anecdotal and excluded from this stability proportion."
+    }
+  ]
+}
