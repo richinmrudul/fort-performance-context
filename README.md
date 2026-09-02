@@ -2,6 +2,9 @@
 
 Leakage-aware REST handgrip modeling prototype with a read-only static product
 demo.
+## Live Demo
+
+[View Fort Performance Context](https://fort-performance-context.vercel.app/)
 
 ## Product Demo
 
