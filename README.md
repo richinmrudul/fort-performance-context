@@ -6,6 +6,8 @@ demo.
 
 [View Fort Performance Context](https://fort-performance-context.vercel.app/)
 
+The demo is deployed as a static Vite/React application on Vercel. No backend or live athlete ingestion is required.
+
 ## Product Demo
 
 The frontend demo is a portfolio-style post-workout experience built only from
